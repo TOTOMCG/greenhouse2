@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --main-color: #00ab00;
+  --second-color: white;
+  --third-color: #ededed;
+  --third-second-color: gray;
+  --nav-height: 60px;
+}
+
 html{
   margin: 0;
   width: 100%;
@@ -8,36 +18,93 @@ body{
   margin: 0;
   height: 100%;
   width: 100%;
-  background-color: blue;
+  background-color: var(--main-color);
 }
 
-aside.sidenav{
-  height: 100%;
+div.sidenav{
+  height: calc(100% - var(--nav-height));
   width: 40px;
   left: 0;
-  background-color: white;
+  background-color: var(--second-color);
+  border-top: solid 2px var(--third-second-color);
 }
 
 nav.navbar{
-  top: 0;
-  background-color: white;
-  max-height: 24px;
+  background-color: var(--second-color);
+  height: var(--nav-height);
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-img{
-  max-width: 24px;
-  margin-left: auto;
-  margin-right: auto;
+img.logo{
+  padding: auto;
+  margin: auto;
+  width: 60px;
+  top: auto;
+  padding: 0;
+  display: block;
+}
+
+div.logo{
+  display: flex;
+  height: var(--nav-height);
+  width: var(--nav-height);
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+div.tab-information{
+  height: var(--nav-height);
+  margin: 0;
+  margin-top: 5px;
+  margin-left: 10px;
+  height: auto;
+
+}
+
+div.tab-name{
+  font-weight: bold;
+  font-size: 23px;
+}
+
+div.tab-description{
+  color: var(--third-second-color)
+}
+
+button.active-tab-status{
+  background-color: var(--third-color);
+}
+
+div.reload-button{
+  margin-top: 12px;
+  margin-left: 6px;
+}
+
+form.refresh:hover{
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5{
+  margin: 0;
+  top: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 button{
   width: 40px;
   top: 0;
-  margin-top: 10px;
-  background-color: white;
+  height: 40px;
+  background-color: var(--second-color);
   border: none;
   padding: 0;
+}
 
+button:hover{
+  cursor: pointer;
+  background-color: var(--third-color);
 }
 
 button.main-primary{
