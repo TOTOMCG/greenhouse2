@@ -13,3 +13,9 @@ urlpatterns += [
     path('main/', include('main.urls')),
     path('', RedirectView.as_view(url='/main/', permanent=True))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += [
+    path('settings/', include('settings.urls')),
+    path('config/', RedirectView.as_view(url='/settings/', permanent=True)),
+    path('setting/', RedirectView.as_view(url='/settings/', permanent=True))
+] 
