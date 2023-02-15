@@ -30,3 +30,4 @@ def patch(token, type_code, value, device_id=0):
     #     response = requests.patch(url + type_code, params={'state': value},
     #                               headers={"X-Auth-Token:" + token})
     dbhelper.add(type_code, device_id, timezone.now(), value)
+

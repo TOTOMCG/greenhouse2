@@ -9,6 +9,7 @@
           <option value="myproject.records_manager.models.MapComponent.objects" />
           <option value="myproject.records_manager.models.DimComponentType.objects" />
           <option value="myproject.records_manager.models.FctRecord.objects" />
+          <option value="pathlib.os" />
         </list>
       </option>
     </inspection_tool>

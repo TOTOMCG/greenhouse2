@@ -9,7 +9,12 @@ from django.conf.urls.static import static
 # main
 urlpatterns = [
     path('main/', include('main.urls')),
-    path('', RedirectView.as_view(url='/main/', permanent=True))
+    path('', RedirectView.as_view(url='/main/', permanent=True)),
+    path('main/humidity', include('humidity.urls')),
+    path('main/temperature', include('temperature.urls')),
+    path('main/watering', include('watering.urls')),
+    path('main/window', include('window.urls')),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # setting
