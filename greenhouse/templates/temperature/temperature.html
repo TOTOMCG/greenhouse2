@@ -2,6 +2,26 @@
 
 {% block main-tab-status %}active-tab-status{% endblock main-tab-status %}
 
+{% block tab-name %}<h4>Панель управления</h4>{% endblock tab-name %}
+{% block tab-description %}
+<style>
+    button.temperature {color: black;}
+</style> 
+<div class="subtub-panel">
+    <div class="humidity">
+        <form action="/main/humidity/">
+            <button class="humidity">Влажность</button>
+        </form>
+    </div>
+    <div class="temperature">
+        <form action="/main/temperature/">
+            <button class="temperature">Температура</button>
+        </form>
+    </div>
+</div> 
+{% endblock tab-description %}
+
+
 {% block main %}
 
 {% endblock main %}

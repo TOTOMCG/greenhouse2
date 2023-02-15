@@ -17,11 +17,7 @@ INSTALLED_APPS = [
     "database",
     "main",
     "settings",
-    "records_manager",
-    "watering",
-    "window",
-    "temperature",
-    "humidity"
+    "records_manager"
 ]
 
 MIDDLEWARE = [

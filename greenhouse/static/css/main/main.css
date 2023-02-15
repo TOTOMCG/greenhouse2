@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 :root{
-  --main-color: #00ab00;
+  --main-color: #f2f3f5;
   --second-color: white;
   --third-color: #ededed;
-  --third-second-color: gray;
+  --third-second-color: #dfe3e8;
   --nav-height: 60px;
   --font-family: 'Inter', sans-serif;
 }
@@ -31,11 +31,11 @@ div.main-flex{
 }
 
 div.main{
-  max-width: 43rem;
-  min-width: 23rem;
-  margin-top: 0;
+  width: calc(100% - 8rem);
+  margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 
 nav.sidenav{
@@ -43,7 +43,7 @@ nav.sidenav{
   width: 40px;
   left: 0;
   background-color: var(--second-color);
-  border-top: solid 2px var(--third-second-color);
+  border-right: solid 1px var(--third-second-color);
 }
 
 nav.navbar{
@@ -53,6 +53,7 @@ nav.navbar{
   margin: 0;
   padding: 0;
   display: flex;
+  border-bottom: solid 1px var(--third-second-color);
 }
 
 img.logo{
@@ -79,6 +80,7 @@ div.tab-information{
   margin-top: 5px;
   margin-left: 10px;
   height: auto;
+  
 
 }
 
@@ -88,7 +90,7 @@ div.tab-name{
 }
 
 div.tab-description{
-  color: var(--third-second-color)
+  color: black;
 }
 
 button.main.active-tab-status, button.database.active-tab-status, button.setting.active-tab-status {
@@ -135,7 +137,7 @@ button.humidity, button.temperature, button.windows, button.watering{
   padding: 0;
   margin-right: 10px;
   font-family: var(--font-family);
-  color: var(--third-second-color);
+  color: #7f7f7f;
   margin-top: 5px;
 }
 
@@ -153,4 +155,67 @@ svg{
   margin-left: 0;
   margin-right: 0;
   padding: 0;
+}
+
+div.air-humidity-block{
+  background-color: green;
+  width: 100%;
+  height: 25rem;
+  margin-top: 0;
+  display: flex;
+}
+
+div.feedblock-logo-div{
+  background-color: red;
+  width: 40px;
+  height: 100%;
+  margin-left: 0;
+  display: flex;
+}
+
+div.feedblock-logo{
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+}
+
+img.humidity-air-logo{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.feedblock-main-content{
+  background-color: yellow;
+  width: 100%;
+}
+
+div.feedblock-header{
+  background: orange;
+  margin-top: 8px;
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
+div.feedblock-main{
+  margin-top: 8px;
+  margin-left: 4px;
+  margin-right: 8px;
+  margin-bottom: 0;
+  background-color: aqua;
+}
+
+div.feedblock-graphic{
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 50rem;
+}
+
+div.soil-humidity-block{
+  background-color: green;
+  width: 100%;
+  height: 25rem;
+  margin-top: 2rem;
+  display: flex;
 }
