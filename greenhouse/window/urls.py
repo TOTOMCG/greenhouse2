@@ -4,6 +4,5 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.returnmain, name='main/temperature.html'),
+    path('', views.returnwindow, name='window/window.html'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
