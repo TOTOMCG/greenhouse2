@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-# main
+# main witk /humidity, /temperature
 urlpatterns = [
     path('main/', include('main.urls')),
     path('', RedirectView.as_view(url='/main/humidity', permanent=True)),
