@@ -6,12 +6,14 @@
   --third-color: #ededed;
   --third-second-color: gray;
   --nav-height: 60px;
+  --font-family: 'Inter', sans-serif;
 }
 
 html{
   margin: 0;
   width: 100%;
   height: 100%;
+  position: absolute;
 }
 
 body{
@@ -19,10 +21,25 @@ body{
   height: 100%;
   width: 100%;
   background-color: var(--main-color);
+  position: absolute;
+  overflow: hidden;
 }
 
-div.sidenav{
-  height: calc(100% - var(--nav-height));
+div.main-flex{
+  display: flex;
+  height: 100%;
+}
+
+div.main{
+  max-width: 43rem;
+  min-width: 23rem;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav.sidenav{
+  height: calc(100% - var(--nav-height)) !important;
   width: 40px;
   left: 0;
   background-color: var(--second-color);
@@ -74,7 +91,7 @@ div.tab-description{
   color: var(--third-second-color)
 }
 
-button.active-tab-status{
+button.main.active-tab-status, button.database.active-tab-status, button.setting.active-tab-status {
   background-color: var(--third-color);
 }
 
@@ -90,10 +107,10 @@ form.refresh:hover{
 h1, h2, h3, h4, h5{
   margin: 0;
   top: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family);
 }
 
-button{
+button.main, button.database, button.setting{
   width: 40px;
   top: 0;
   height: 40px;
@@ -105,6 +122,25 @@ button{
 button:hover{
   cursor: pointer;
   background-color: var(--third-color);
+}
+
+div.subtub-panel{
+  display: flex;
+}
+
+button.humidity, button.temperature, button.windows, button.watering{
+  background-color: var(--second-color);
+  border: none;
+  padding: 0;
+  margin-right: 10px;
+  font-family: var(--font-family);
+  color: var(--third-second-color);
+  margin-top: 5px;
+}
+
+button.humidity:hover, button.temperature:hover, button.windows:hover, button.watering:hover{
+  color:black;
+  cursor: pointer;
 }
 
 button.main-primary{
