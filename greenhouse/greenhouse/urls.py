@@ -25,3 +25,20 @@ urlpatterns += [
     path('databases/', RedirectView.as_view(url='/database/', permanent=True)),
     path('db/', RedirectView.as_view(url='/database/', permanent=True))
 ]
+
+urlpatterns += [
+    path('main/window/', include('window.urls')),
+    path('main/windows/', RedirectView.as_view(url='/main/window', permanent=True))
+]
+
+urlpatterns += [
+    path('main/temperature/', include('temperature.urls'))
+]
+
+urlpatterns += [
+    path('main/humidity/', include('humidity.urls'))
+]
+
+urlpatterns += [
+    path('main/watering/', include('watering.urls'))
+]
