@@ -4,30 +4,25 @@
 {% block tab-name %}<h4>Панель управления</h4>{% endblock tab-name %}
 
 {% block tab-description %} 
-<div class="subtub-panel">
-    <div class="humidity">
-        <form action="humidity/">
-            <button class="humidity">Влажность</button>
-        </form>
-    </div>
-    <div class="temperature">
-        <form action="temperature/">
-            <button class="temperature">Температура</button>
-        </form>
-    </div>
-    <div class="windows">
-        <form action="windows/">
-            <button class="windows">Форточки</button>
-        </form>
-    </div>
-    <div class="water">
-        <form action="watering/">
-            <button class="watering">Полив</button>
-        </form>
-    </div>
-</div> 
 {% endblock tab-description %}
 
 {% block main %}
+    <div class="main-block-main" >
+        <div class="main-block-main-left" >
+            <div class="main-tape-sensors">
+                <div class="soil-himidity-block">
+                    
+                </div>
+                <div class="air-humidity-block">
 
+                </div>
+            </div>
+            <div class="main-list">
+
+            </div>
+        </div>
+        <div class="main-block-main-right" >
+            <div class="chart-block"></div>
+        </div>
+    </div>
 {% endblock main %}

@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/main', permanent=True)),
     path('main/', include('main.urls')),
 ]
 
