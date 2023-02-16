@@ -6,9 +6,7 @@ from django.conf.urls.static import static
 
 # влажность 
 urlpatterns = [
-    path('', RedirectView.as_view(url='/main/humidity/', permanent=True)),
-    path('humidity/', views.returnmainhumidity, name='humidity/humidity.html'),
-    path('temperature/', views.returnmaintemperature, name='temperature/temperature.html')
+    path('', views.returnmain, name='main'),
 ]
 
 

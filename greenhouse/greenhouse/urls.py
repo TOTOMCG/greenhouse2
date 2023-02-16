@@ -4,12 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-# main with /humidity, /temperature
 urlpatterns = [
-    path('', RedirectView.as_view(url="/main/humidity", permanent=True))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-urlpatterns += [
     path('main/', include('main.urls')),
 ]
 
