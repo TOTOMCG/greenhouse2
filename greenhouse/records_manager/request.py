@@ -6,20 +6,20 @@ from django.utils import timezone
 url = 'https://dt.miet.ru/ppo_it/api/'
 
 
-def get(type_code, device_id=0):
-    if device_id:
-        res = requests.get(url + type_code + '/' + str(device_id))
-    else:
-        res = requests.get(url + type_code)
+def get(type_code, device_id, datetime):
+    values = []
+    res = requests.get(url + type_code + '/' + str(device_id))
     json = res.json()
-    t = timezone.now()
-    if type_code == 'temp_hum':
-        dbhelper.add(type_code + '_temp', device_id, t, json['temperature'])
-        dbhelper.add(type_code + '_hum', device_id, t, json['humidity'])
-    elif type_code == 'hum':
-        dbhelper.add(type_code, device_id, t, json['humidity'])
 
-    # return json
+    match type_code:
+        case 'temp_hum':
+            values.append(json['temperature'])
+            values.append(json['humidity'])
+            dbhelper.add(type_code + '_temp', device_id, datetime, values[0])
+            dbhelper.add(type_code + '_hum', device_id, datetime, values[1])
+        case 'hum':
+            dbhelper.add(type_code, device_id, datetime, json['humidity'])
+    return values
 
 
 def patch(token, type_code, value, device_id=0):
@@ -31,3 +31,12 @@ def patch(token, type_code, value, device_id=0):
     #                               headers={"X-Auth-Token:" + token})
     dbhelper.add(type_code, device_id, timezone.now(), value)
 
+
+def get_all():
+    t = timezone.now()
+    avg_value = []
+    for i in range(1, 5):
+        avg_value = get('temp_hum', i, t)
+    print(avg_value[0] / 4, avg_value[1] / 4)
+    dbhelper.add_avg('temp_hum_temp', t, avg_value[0]/4)
+    dbhelper.add_avg('temp_hum_hum', t, avg_value[1]/4)

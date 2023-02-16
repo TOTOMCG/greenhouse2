@@ -51,7 +51,7 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = [
-    BASE_DIR / "/static/", "static"
+    BASE_DIR / "static"
 ]
 
 STATIC_URL = "static/"

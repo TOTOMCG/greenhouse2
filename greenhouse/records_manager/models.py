@@ -15,6 +15,13 @@ class MapComponent(models.Model):
         unique_together = (('ext_device_id', 'type_id'),)
 
 
+class AvgRecord(models.Model):
+    id = models.AutoField(primary_key=True)
+    datetime = models.DateTimeField()
+    type_id = models.ForeignKey(DimComponentType, on_delete=models.CASCADE)
+    avg_value = models.FloatField()
+
+
 class FctRecord(models.Model):
     record_id = models.AutoField(primary_key=True)
     datetime = models.DateTimeField()

@@ -1,5 +1,4 @@
-from .models import FctRecord, DimComponentType, MapComponent
-from django.db.models import Avg
+from .models import FctRecord, DimComponentType, MapComponent, AvgRecord
 
 
 def add(type_code, device_id, datetime, value):
@@ -13,5 +12,7 @@ def get(type_code, device_id, value):
     component_id = MapComponent.objects.get(ext_device_id=device_id, type_id=type_id)
     return FctRecord.objects.filter(component_id=component_id, value=value)
 
-def get_avg():
-    get()
+
+def add_avg(type_code, datetime, avg_value):
+    type_id, b = DimComponentType.objects.get_or_create(type_code=type_code)
+    AvgRecord.objects.create(datetime=datetime,type_id=type_id, avg_value=avg_value)
