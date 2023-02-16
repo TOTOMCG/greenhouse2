@@ -22,7 +22,7 @@ body{
   width: 100%;
   background-color: var(--main-color);
   position: absolute;
-
+  
 }
 
 div.main-flex{
@@ -38,12 +38,11 @@ div.main{
 }
 
 nav.sidenav{
-  height: calc(100% - var(--nav-height)) !important;
+  height: 100vmax;
   width: 40px;
   left: 0;
   background-color: var(--second-color);
   border-right: solid 1px var(--third-second-color);
-  position: sticky;
 }
 
 nav.navbar{
@@ -54,7 +53,6 @@ nav.navbar{
   padding: 0;
   display: flex;
   border-bottom: solid 1px var(--third-second-color);
-  position: staticky left;
 }
 
 img.logo{
@@ -80,8 +78,6 @@ div.tab-information{
   margin-top: 5px;
   margin-left: 10px;
   height: auto;
-  
-
 }
 
 div.tab-name{
@@ -120,6 +116,7 @@ button.main, button.database, button.setting{
   background-color: var(--second-color);
   border: none;
   padding: 0;
+
 }
 
 button:hover{
