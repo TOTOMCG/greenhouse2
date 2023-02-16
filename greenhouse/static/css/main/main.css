@@ -22,7 +22,7 @@ body{
   width: 100%;
   background-color: var(--main-color);
   position: absolute;
-  overflow: hidden;
+
 }
 
 div.main-flex{
@@ -35,7 +35,6 @@ div.main{
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
-  display: block;
 }
 
 nav.sidenav{
@@ -44,6 +43,7 @@ nav.sidenav{
   left: 0;
   background-color: var(--second-color);
   border-right: solid 1px var(--third-second-color);
+  position: sticky;
 }
 
 nav.navbar{
@@ -54,6 +54,7 @@ nav.navbar{
   padding: 0;
   display: flex;
   border-bottom: solid 1px var(--third-second-color);
+  position: staticky left;
 }
 
 img.logo{
@@ -62,7 +63,6 @@ img.logo{
   width: 60px;
   top: auto;
   padding: 0;
-  display: block;
 }
 
 div.logo{
