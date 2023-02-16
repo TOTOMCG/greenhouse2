@@ -18,7 +18,8 @@ def get(type_code, device_id, datetime):
             dbhelper.add(type_code + '_temp', device_id, datetime, values[0])
             dbhelper.add(type_code + '_hum', device_id, datetime, values[1])
         case 'hum':
-            dbhelper.add(type_code, device_id, datetime, json['humidity'])
+            values.append(json['humidity'])
+            dbhelper.add(type_code, device_id, datetime, values[0])
     return values
 
 
@@ -34,9 +35,14 @@ def patch(token, type_code, value, device_id=0):
 
 def get_all():
     t = timezone.now()
-    avg_value = []
+    avg_value = [0, 0, 0]
     for i in range(1, 5):
-        avg_value = get('temp_hum', i, t)
-    print(avg_value[0] / 4, avg_value[1] / 4)
-    dbhelper.add_avg('temp_hum_temp', t, avg_value[0]/4)
-    dbhelper.add_avg('temp_hum_hum', t, avg_value[1]/4)
+        g = get('temp_hum', i, t)
+        avg_value[0] += g[0]
+        avg_value[1] += g[1]
+    for i in range(1, 7):
+        avg_value[2] += get('hum', i, t)[0]
+    dbhelper.add_avg('temp_hum_temp', t, avg_value[0] / 4)
+    dbhelper.add_avg('temp_hum_hum', t, avg_value[1] / 4)
+    dbhelper.add_avg('hum', t, avg_value[2] / 4)
+    print(getattr(dbhelper.get('hum', 1), 'value'))
