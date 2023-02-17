@@ -4,7 +4,6 @@ from datetime import timedelta
 
 from celery import Celery
 from django.conf import settings
-from django.utils import timezone
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'greenhouse.settings')
 
@@ -17,7 +16,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'get_all-every-10-seconds': {
         'task': 'records_manager.tasks.get_all',
-        'schedule': timedelta(seconds=10),
+        'schedule': timedelta(seconds=3),
     },
 }
 

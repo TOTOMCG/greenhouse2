@@ -2,7 +2,6 @@ from __future__ import absolute_import, unicode_literals
 
 import requests
 from celery import Celery
-from celery import shared_task
 from . import dbhelper
 from django.utils import timezone
 
@@ -19,11 +18,11 @@ def get(type_code, device_id, datetime):
         case 'temp_hum':
             values.append(json['temperature'])
             values.append(json['humidity'])
-            dbhelper.add(type_code + '_temp', device_id, datetime, values[0])
-            dbhelper.add(type_code + '_hum', device_id, datetime, values[1])
+            dbhelper.add('temp', device_id, datetime, values[0])
+            dbhelper.add('hum', device_id, datetime, values[1])
         case 'hum':
             values.append(json['humidity'])
-            dbhelper.add(type_code, device_id, datetime, values[0])
+            dbhelper.add('soilhum', device_id, datetime, values[0])
     return values
 
 
@@ -46,7 +45,6 @@ def get_all():
         avg_value[0] += g[0]
         avg_value[1] += g[1]
     for i in range(1, 7):
-        avg_value[2] += get('hum', i, t)[0]
-    dbhelper.add_avg('temp_hum_temp', t, avg_value[0] / 4)
-    dbhelper.add_avg('temp_hum_hum', t, avg_value[1] / 4)
-    dbhelper.add_avg('hum', t, avg_value[2] / 6)
+        get('hum', i, t)
+    dbhelper.add_avg('temp', t, round(avg_value[0] / 4, 1))
+    dbhelper.add_avg('hum', t, round(avg_value[1] / 4, 1))

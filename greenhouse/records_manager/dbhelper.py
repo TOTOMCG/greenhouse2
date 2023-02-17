@@ -17,3 +17,6 @@ def get(type_code, device_id):
 
 def add_avg(type_code, datetime, avg_value):
     AvgRecord.objects.create(datetime=datetime, type_id=get_type_id(type_code), avg_value=avg_value)
+
+def get_avg(type_code):
+    return AvgRecord.objects.filter(type_id=get_type_id(type_code)).last()
