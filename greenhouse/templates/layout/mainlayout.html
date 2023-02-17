@@ -3,6 +3,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8"/>
+    {% block meta %}{% endblock meta %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhyyyyyyyyy initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/main/main.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <body>
     <nav class="navbar">
       <div class="logo">
-        <img class="logo" src="{% static 'img/logo/test.webp' %}" alt="Логотип">
+        <img class="logo" src="{% static 'img/logo/logo.svg' %}" alt="Логотип">
       </div>
       <div class="tab-information"> 
         <div class="tab-name">

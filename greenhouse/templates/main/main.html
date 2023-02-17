@@ -1,5 +1,8 @@
 {% extends 'layout/mainlayout.html' %} {% load static %} 
 
+
+
+
 {% block main-tab-status %}active-tab-status{% endblock main-tab-status %}
 {% block tab-name %}<h4>Панель управления</h4>{% endblock tab-name %}
 
@@ -7,22 +10,64 @@
 {% endblock tab-description %}
 
 {% block main %}
-    <div class="main-block-main" >
-        <div class="main-block-main-left" >
-            <div class="main-tape-sensors">
-                <div class="soil-himidity-block">
-                    
+    <div class="main-flex-block">
+        <div class="main-content-block common background">
+            <div class="content-block-header">
+                <div class="header-logo">
+                    <img class="header-logo" src="{% static 'img/icons/airhumidity.png' %}" alt="AH">
                 </div>
-                <div class="air-humidity-block">
-
+                <div class="header-content-block">
+                    <h4 class="main-block-header">Влажность воздуха</h4>
                 </div>
-            </div>
-            <div class="main-list">
-
             </div>
         </div>
-        <div class="main-block-main-right" >
-            <div class="chart-block"></div>
+        <div class="main-content-block common background">
+            <div class="content-block-header">
+                <div class="header-logo">
+                    <img class="header-logo" src="{% static 'img/icons/soilhumidity.png' %}" alt="SH">
+                </div>
+                <div class="header-content-block">
+                    <h4 class="main-block-header">Влажность почвы</h4>
+                </div>
+            </div>
+        </div>
+        <div class="main-content-block common">
+            <div class="main-content-block-top background">
+                <div class="content-block-header">
+                    <div class="header-logo">
+                        <img class="header-logo" src="{% static 'img/icons/temperature.png' %}" alt="T">
+                    </div>
+                    <div class="header-content-block">
+                        <h4 class="main-block-header">Температура</h4>
+                    </div>
+                </div>
+                <div class="main-content-main">
+                    44
+                </div>
+            </div>
+            <div class="main-content-block-bottom background">
+                <div class="content-block-header">
+                    <div class="header-logo">
+                        <img class="header-logo" src="{% static 'img/icons/wind.png' %}" alt="AH">
+                    </div>
+                    <div class="header-content-block">
+                        <h4 class="main-block-header">Проветривание</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content-block charts background">
+            <div class="content-block-header">
+                <div class="header-logo">
+                    <img class="header-logo" src="{% static 'img/icons/chart.png' %}" alt="C">
+                </div>
+                <div class="header-content-block">
+                    <h4 class="main-block-header">Графики</h4>
+                </div>
+            </div>
+            <div class="main-content-charts">
+                44
+            </div>
         </div>
     </div>
 {% endblock main %}
