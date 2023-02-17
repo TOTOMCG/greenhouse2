@@ -49,4 +49,4 @@ def get_all():
         avg_value[2] += get('hum', i, t)[0]
     dbhelper.add_avg('temp_hum_temp', t, avg_value[0] / 4)
     dbhelper.add_avg('temp_hum_hum', t, avg_value[1] / 4)
-    dbhelper.add_avg('hum', t, avg_value[2] / 4)
+    dbhelper.add_avg('hum', t, avg_value[2] / 6)

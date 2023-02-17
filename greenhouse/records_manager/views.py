@@ -7,5 +7,5 @@ from greenhouse.records_manager import models
 #обработка модели средних значений для вывода в шаблон
 class ModelName(ListView):
     model = models.AvgRecord
-    template_name = 'main.html'
-    context_object_name = 'average'
+    template_name = 'mainlayout.html'
+    context_object_name = 'avg_record'
