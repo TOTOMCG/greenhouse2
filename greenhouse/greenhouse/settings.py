@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "DJANGO-SECRET-DEDKOV-POMIDORY-TREUGOLNY-PASSWORD-KEY-#$%^)$()-g^2612-mn$772-g2g312"
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.10.10.55']
+ALLOWED_HOSTS = ['10.10.10.55', '127.0.0.1']
 
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
