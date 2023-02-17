@@ -1,9 +1,13 @@
-import requests
+from __future__ import absolute_import, unicode_literals
 
+import requests
+from celery import Celery
+from celery import shared_task
 from . import dbhelper
 from django.utils import timezone
 
 url = 'https://dt.miet.ru/ppo_it/api/'
+app = Celery()
 
 
 def get(type_code, device_id, datetime):
@@ -33,8 +37,9 @@ def patch(token, type_code, value, device_id=0):
     dbhelper.add(type_code, device_id, timezone.now(), value)
 
 
+@app.task
 def get_all():
-    t = timezone.now()
+    t = timezone.localtime()
     avg_value = [0, 0, 0]
     for i in range(1, 5):
         g = get('temp_hum', i, t)
@@ -45,4 +50,3 @@ def get_all():
     dbhelper.add_avg('temp_hum_temp', t, avg_value[0] / 4)
     dbhelper.add_avg('temp_hum_hum', t, avg_value[1] / 4)
     dbhelper.add_avg('hum', t, avg_value[2] / 4)
-    print(getattr(dbhelper.get('hum', 1), 'value'))
