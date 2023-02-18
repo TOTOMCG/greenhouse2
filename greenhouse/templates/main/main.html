@@ -7,11 +7,11 @@
 {% endblock tab-description %}
 
 {% block main %}
-    <script type="text/javascript">
-      setTimeout(function(){
-        location = ''
-      },3200)
-    </script>
+<!--    <script type="text/javascript">-->
+<!--      setTimeout(function(){-->
+<!--        location = ''-->
+<!--      },3200)-->
+<!--    </script>-->
     <div class="main-flex-block">
 
         <!-------->
@@ -40,7 +40,7 @@
                         <h5 class="main-content-big-header-text">Датчик 1:</h5>
                     </div>
                     <div class="main-content-big-meaning">
-                        <h5 class="main-content-big-meaning">{{soilhum_1.value}}%</h5>
+                        <h5 class="main-content-big-meaning">{{soil_hum_1.value}}%</h5>
                     </div> 
                     <div class="switcher-text-block">
                         <h6 class="switcher">Полив:</h6>
@@ -57,7 +57,7 @@
                         <h5 class="main-content-big-header-text">Датчик 2:</h5>
                     </div>
                     <div class="main-content-big-meaning">
-                        <h5 class="main-content-big-meaning">{{soilhum_2.value}}%</h5>
+                        <h5 class="main-content-big-meaning">{{soil_hum_2.value}}%</h5>
                     </div> 
                     <div class="switcher-text-block">
                         <h6 class="switcher">Полив:</h6>
@@ -74,7 +74,7 @@
                         <h5 class="main-content-big-header-text">Датчик 3:</h5>
                     </div>
                     <div class="main-content-big-meaning">
-                        <h5 class="main-content-big-meaning">{{soilhum_3.value}}%</h5>
+                        <h5 class="main-content-big-meaning">{{soil_hum_3.value}}%</h5>
                     </div> 
                     <div class="switcher-text-block">
                         <h6 class="switcher">Полив:</h6>
@@ -91,7 +91,7 @@
                         <h5 class="main-content-big-header-text">Датчик 4:</h5>
                     </div>
                     <div class="main-content-big-meaning">
-                        <h5 class="main-content-big-meaning">{{soilhum_4.value}}%</h5>
+                        <h5 class="main-content-big-meaning">{{soil_hum_4.value}}%</h5>
                     </div> 
                     <div class="switcher-text-block">
                         <h6 class="switcher">Полив:</h6>
@@ -108,7 +108,7 @@
                         <h5 class="main-content-big-header-text">Датчик 5:</h5>
                     </div>
                     <div class="main-content-big-meaning">
-                        <h5 class="main-content-big-meaning">{{soilhum_5.value}}%</h5>
+                        <h5 class="main-content-big-meaning">{{soil_hum_5.value}}%</h5>
                     </div> 
                     <div class="switcher-text-block">
                         <h6 class="switcher">Полив:</h6>
@@ -125,7 +125,7 @@
                         <h5 class="main-content-big-header-text">Датчик 6:</h5>
                     </div>
                     <div class="main-content-big-meaning">
-                        <h5 class="main-content-big-meaning">{{soilhum_6.value}}%</h5>
+                        <h5 class="main-content-big-meaning">{{soil_hum_6.value}}%</h5>
                     </div> 
                     <div class="switcher-text-block">
                         <h6 class="switcher">Полив:</h6>
@@ -151,7 +151,7 @@
                         <img class="header-logo" src="{% static 'img/icons/airhumidity.png' %}" alt="T">
                     </div>
                     <div class="header-content-block">
-                        <h4 class="main-block-header">Температура</h4>
+                        <h4 class="main-block-header">Влажность воздуха</h4>
                     </div>
                 </div>
                 <div class="main-content-big">
@@ -160,7 +160,7 @@
                             <h5 class="main-content-big-header-text">Среднее значение:</h5>
                         </div>
                         <div class="main-content-big-meaning right">
-                            <h5 class="main-content-big-meaning">{{avg_hum.avg_value}}%</h5>
+                            <h5 class="main-content-big-meaning">{{avg_temp.avg_value}}%</h5>
                         </div> 
                     </div>
                     <div class="separator"></div>
@@ -169,7 +169,7 @@
                             <h5 class="main-content-big-header-text">Датчик 1:</h5>
                         </div>
                         <div class="main-content-big-meaning right">
-                            <h5 class="main-content-big-meaning">{{hum_air_1.value}}%</h5>
+                            <h5 class="main-content-big-meaning">{{air_hum_1.value}}%</h5>
                         </div> 
                     </div>
                     <div class="main-block-big-list-content grey-background">
@@ -177,7 +177,7 @@
                             <h5 class="main-content-big-header-text">Датчик 2:</h5>
                         </div>
                         <div class="main-content-big-meaning right">
-                            <h5 class="main-content-big-meaning">{{hum_air_2.value}}%</h5>
+                            <h5 class="main-content-big-meaning">{{air_hum_2.value}}%</h5>
                         </div> 
                     </div>
                     <div class="main-block-big-list-content">
@@ -185,7 +185,7 @@
                             <h5 class="main-content-big-header-text">Датчик 3:</h5>
                         </div>
                         <div class="main-content-big-meaning right">
-                            <h5 class="main-content-big-meaning">{{hum_air_3.value}}%</h5>
+                            <h5 class="main-content-big-meaning">{{air_hum_3.value}}%</h5>
                         </div> 
                     </div>
                     <div class="main-block-big-list-content grey-background">
@@ -193,7 +193,7 @@
                             <h5 class="main-content-big-header-text">Датчик 4:</h5>
                         </div>
                         <div class="main-content-big-meaning right">
-                            <h5 class="main-content-big-meaning">{{hum_air_4.value}}%</h5>
+                            <h5 class="main-content-big-meaning">{{air_hum_4.value}}%</h5>
                         </div> 
                     </div>
                 </div>
@@ -213,7 +213,7 @@
                             <h5 class="main-content-big-header-text">Состояние:</h5>
                         </div>
                         <div class="main-content-big-meaning right">
-                            <h5 class="main-content-big-meaning">включен</h5>
+                            <h5 class="main-content-big-meaning">БАН</h5>
                         </div> 
                     </div>
                     <div class="main-block-big-list-content">
@@ -306,7 +306,7 @@
                             <h5 class="main-content-big-header-text">Состояние:</h5>
                         </div>
                         <div class="main-content-big-meaning right">
-                            <h5 class="main-content-big-meaning">открыто</h5>
+                            <h5 class="main-content-big-meaning">БАН</h5>
                         </div> 
                     </div>
                     <div class="main-block-big-list-content">
