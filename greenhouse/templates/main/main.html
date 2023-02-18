@@ -1,8 +1,5 @@
 {% extends 'layout/mainlayout.html' %} {% load static %}
 
-
-
-
 {% block main-tab-status %}active-tab-status{% endblock main-tab-status %}
 {% block tab-name %}<h4>Панель управления</h4>{% endblock tab-name %}
 
@@ -16,61 +13,6 @@
       },3200)
     </script>
     <div class="main-flex-block">
-
-
-        <div class="main-content-block common background">
-            <div class="content-block-header">
-                <div class="header-logo">
-                    <img class="header-logo" src="{% static 'img/icons/airhumidity.png' %}" alt="AH">
-                </div>
-                <div class="header-content-block">
-                    <h4 class="main-block-header">Влажность воздуха</h4>
-                </div>
-            </div>
-            <div class="main-content-big">
-                <div class="main-content-big-header">
-                    <div class="main-content-big-header-text">
-                        <h5 class="main-content-big-header-text">Среднее значение:</h5>
-                    </div>
-                    <div class="main-content-big-meaning right">
-                        <h5 class="main-content-big-meaning">{{avg_hum.avg_value}}%</h5>
-                    </div> 
-                </div>
-                <div class="separator"></div>
-                <div class="main-block-big-list-content">
-                    <div class="main-content-big-header-text">
-                        <h5 class="main-content-big-header-text">Датчик 1:</h5>
-                    </div>
-                    <div class="main-content-big-meaning right">
-                        <h5 class="main-content-big-meaning">{{hum_air_1.value}}%</h5>
-                    </div> 
-                </div>
-                <div class="main-block-big-list-content grey-background">
-                    <div class="main-content-big-header-text ">
-                        <h5 class="main-content-big-header-text">Датчик 2:</h5>
-                    </div>
-                    <div class="main-content-big-meaning right">
-                        <h5 class="main-content-big-meaning">{{hum_air_2.value}}%</h5>
-                    </div> 
-                </div>
-                <div class="main-block-big-list-content">
-                    <div class="main-content-big-header-text">
-                        <h5 class="main-content-big-header-text">Датчик 3:</h5>
-                    </div>
-                    <div class="main-content-big-meaning right">
-                        <h5 class="main-content-big-meaning">{{hum_air_3.value}}%</h5>
-                    </div> 
-                </div>
-                <div class="main-block-big-list-content grey-background">
-                    <div class="main-content-big-header-text">
-                        <h5 class="main-content-big-header-text">Датчик 4:</h5>
-                    </div>
-                    <div class="main-content-big-meaning right">
-                        <h5 class="main-content-big-meaning">{{hum_air_4.value}}%</h5>
-                    </div> 
-                </div>
-            </div>
-        </div>
 
         <!-------->
 
@@ -198,7 +140,102 @@
             </div>
         </div>
 
+        
+
         <!-------->
+
+        <div class="main-content-block common">
+            <div class="main-content-block-top background">
+                <div class="content-block-header">
+                    <div class="header-logo">
+                        <img class="header-logo" src="{% static 'img/icons/airhumidity.png' %}" alt="T">
+                    </div>
+                    <div class="header-content-block">
+                        <h4 class="main-block-header">Температура</h4>
+                    </div>
+                </div>
+                <div class="main-content-big">
+                    <div class="main-content-big-header">
+                        <div class="main-content-big-header-text">
+                            <h5 class="main-content-big-header-text">Среднее значение:</h5>
+                        </div>
+                        <div class="main-content-big-meaning right">
+                            <h5 class="main-content-big-meaning">{{avg_hum.avg_value}}%</h5>
+                        </div> 
+                    </div>
+                    <div class="separator"></div>
+                    <div class="main-block-big-list-content">
+                        <div class="main-content-big-header-text">
+                            <h5 class="main-content-big-header-text">Датчик 1:</h5>
+                        </div>
+                        <div class="main-content-big-meaning right">
+                            <h5 class="main-content-big-meaning">{{hum_air_1.value}}%</h5>
+                        </div> 
+                    </div>
+                    <div class="main-block-big-list-content grey-background">
+                        <div class="main-content-big-header-text">
+                            <h5 class="main-content-big-header-text">Датчик 2:</h5>
+                        </div>
+                        <div class="main-content-big-meaning right">
+                            <h5 class="main-content-big-meaning">{{hum_air_2.value}}%</h5>
+                        </div> 
+                    </div>
+                    <div class="main-block-big-list-content">
+                        <div class="main-content-big-header-text">
+                            <h5 class="main-content-big-header-text">Датчик 3:</h5>
+                        </div>
+                        <div class="main-content-big-meaning right">
+                            <h5 class="main-content-big-meaning">{{hum_air_3.value}}%</h5>
+                        </div> 
+                    </div>
+                    <div class="main-block-big-list-content grey-background">
+                        <div class="main-content-big-header-text">
+                            <h5 class="main-content-big-header-text">Датчик 4:</h5>
+                        </div>
+                        <div class="main-content-big-meaning right">
+                            <h5 class="main-content-big-meaning">{{hum_air_4.value}}%</h5>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="main-content-block-bottom background">
+                <div class="content-block-header">
+                    <div class="header-logo">
+                        <img class="header-logo" src="{% static 'img/icons/soilhumidity.png' %}" alt="AH">
+                    </div>
+                    <div class="header-content-block">
+                        <h4 class="main-block-header">Полив</h4>
+                    </div>
+                </div>
+                <div class="main-content-block-bottom-content">
+                    <div class="main-content-big-header">
+                        <div class="main-content-big-header-text">
+                            <h5 class="main-content-big-header-text">Состояние:</h5>
+                        </div>
+                        <div class="main-content-big-meaning right">
+                            <h5 class="main-content-big-meaning">включен</h5>
+                        </div> 
+                    </div>
+                    <div class="main-block-big-list-content">
+                        <div class="main-content-big-header-text">
+                            <h5 class="main-content-big-header-text">Орошение</h5>
+                        </div>
+                        <div class="main-content-big-meaning">
+                            <h5 class="main-content-big-meaning"></h5>
+                        </div> 
+                        <div class="switcher-text-block">                     
+                        </div>
+                        <div class="switcher-block">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
 
         <div class="main-content-block common">
             <div class="main-content-block-top background">
@@ -280,7 +317,6 @@
                             <h5 class="main-content-big-meaning"></h5>
                         </div> 
                         <div class="switcher-text-block">
-                            <h6 class="switcher">Полив:</h6>
                         </div>
                         <div class="switcher-block">
                             <label class="switch">
