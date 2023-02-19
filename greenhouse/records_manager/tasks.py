@@ -19,10 +19,10 @@ def get(type_code, device_id, datetime):
             values.append(json['temperature'])
             values.append(json['humidity'])
             dbhelper.add('temp', device_id, datetime, values[0])
-            dbhelper.add('hum', device_id, datetime, values[1])
+            dbhelper.add('air_hum', device_id, datetime, values[1])
         case 'hum':
             values.append(json['humidity'])
-            dbhelper.add('soilhum', device_id, datetime, values[0])
+            dbhelper.add('soil_hum', device_id, datetime, values[0])
     return values
 
 
@@ -47,4 +47,4 @@ def get_all():
     for i in range(1, 7):
         get('hum', i, t)
     dbhelper.add_avg('temp', t, round(avg_value[0] / 4, 1))
-    dbhelper.add_avg('hum', t, round(avg_value[1] / 4, 1))
+    dbhelper.add_avg('air_hum', t, round(avg_value[1] / 4, 1))
