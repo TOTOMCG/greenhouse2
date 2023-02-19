@@ -9,6 +9,10 @@ urlpatterns = [
     path('main/', include('main.urls')),
 ]
 
+urlpatterns += [
+    path('json/', include('data_helper.urls') )
+]
+
 # setting
 urlpatterns += [
     path('settings/', include('settings.urls')),

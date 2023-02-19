@@ -28,7 +28,7 @@ body{
   
 }
 
-div.main-flex{
+div.main-flex, div.htmx-request, div.htmx-sattling{
   display: flex;
   height: 100%;
 }
