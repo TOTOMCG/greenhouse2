@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
-from records_manager import dbhelper
+from records_manager import dbhelper, http_request
+
 
 
 
@@ -23,4 +24,8 @@ def returnmain(request):
         'temp_3': dbhelper.get('temp',3),
         'temp_4': dbhelper.get('temp',4),
     }
+    if request.method == 'POST':
+        http_request.patch('fork_drive',1)
+        print(1)
+
     return render(request, 'main/main.html', context)

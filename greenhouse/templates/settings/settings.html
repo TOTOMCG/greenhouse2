@@ -42,10 +42,21 @@
                 </div>
                 <div class="switcher-block">
                     <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" id="checkbox" value="{{True}}">
                         <span class="slider round"></span>
                     </label>
                 </div>
+                <script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!-- Import Jquery Here-->
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#checkbox').change(function() {
+                            $.post("/settings/", {
+                                value: this.checked,
+                                csrfmiddlewaretoken: '{{ csrf_token }}'
+                            });
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>
