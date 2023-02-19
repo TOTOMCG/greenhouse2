@@ -6,16 +6,28 @@
 {% block tab-description %} 
 {% endblock tab-description %}
 
+{% block meta %}<meta http-equiv="refresh" content="30" >{% endblock meta %}<meta http-equiv="refresh" content="30;url=index.html">
+
 {% block main %}
     <script type="text/javascript">
-      setTimeout(function(){
-        location = ''
-      },3200)
+        async function elementUpdate(selector) {
+            try {
+              var html = await (await fetch(location.href)).text();
+              var newdoc = new DOMParser().parseFromString(html, 'text/html');
+              document.querySelector(selector).outerHTML = newdoc.querySelector(selector).outerHTML;
+              console.log('Элемент '+selector+' был успешно обновлен');
+              return true;
+            } catch(err) {
+              console.log('При обновлении элемента '+selector+' произошла ошибка:');
+              console.dir(err);
+              return false;
+            }
+          }
+
+		$(document).ready(elementupdtate('div#testid'){setInterval('show()',10000);});
     </script>
-    <div class="main-flex-block">
-
+    <div class="main-flex-block"> 
         <!-------->
-
         <div class="main-content-block common background">
             <div class="content-block-header">
                 <div class="header-logo">
@@ -39,7 +51,7 @@
                     <div class="main-content-big-header-text">
                         <h5 class="main-content-big-header-text">Датчик 1:</h5>
                     </div>
-                    <div class="main-content-big-meaning">
+                    <div id="testid" class="main-content-big-meaning">
                         <h5 class="main-content-big-meaning">{{soilhum_1.value}}%</h5>
                     </div> 
                     <div class="switcher-text-block">
@@ -140,8 +152,6 @@
             </div>
         </div>
 
-        
-
         <!-------->
 
         <div class="main-content-block common">
@@ -236,6 +246,8 @@
                 
             </div>
         </div>
+
+        <!------>
 
         <div class="main-content-block common">
             <div class="main-content-block-top background">
