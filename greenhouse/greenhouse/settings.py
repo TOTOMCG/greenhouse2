@@ -12,7 +12,6 @@ INSTALLED_APPS = [
     "database",
     "main",
     "settings",
-    "data_helper",
     "records_manager",
     "django_celery_beat",
 ]

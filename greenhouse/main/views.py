@@ -6,6 +6,8 @@ from records_manager import dbhelper, http_request
 
 
 def returnmain(request):
+    return render(request, 'main/main.html')
+def returnpanel(request):
     context = {
         'avg_temp': dbhelper.get_avg('temp'),
         'avg_air_hum': dbhelper.get_avg('air_hum'),
@@ -24,8 +26,4 @@ def returnmain(request):
         'temp_3': dbhelper.get('temp',3),
         'temp_4': dbhelper.get('temp',4),
     }
-    if request.method == 'POST':
-        http_request.patch('fork_drive',1)
-        print(1)
-
-    return render(request, 'main/main.html', context)
+    return render(request, 'main/panel.html', context)

@@ -10,7 +10,7 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('json/', include('data_helper.urls') )
+    path('json/', include('main.urls') )
 ]
 
 # setting
