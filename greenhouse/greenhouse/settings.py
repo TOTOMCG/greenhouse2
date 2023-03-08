@@ -9,11 +9,9 @@ ALLOWED_HOSTS = ['10.10.10.55', '127.0.0.1']
 
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
-    "database",
     "main",
-    "settings",
-    "records_manager",
-    "django_celery_beat",
+    "utility",
+    "django_celery_beat"
 ]
 
 MIDDLEWARE = [

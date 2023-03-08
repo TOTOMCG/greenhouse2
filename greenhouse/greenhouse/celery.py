@@ -15,7 +15,7 @@ app.autodiscover_tasks()
 
 app.conf.beat_schedule = {
     'get_all-every-10-seconds': {
-        'task': 'records_manager.tasks.get_all',
+        'task': 'utility.tasks.get_all',
         'schedule': timedelta(seconds=3),
     },
 }
