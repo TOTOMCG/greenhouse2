@@ -5,6 +5,9 @@
 <!-- Control Panel -->
   <section class="panel" id="control-panel">
 
+    <div class="tab-information">
+      <h1 class="tab-information__heading">Панель управления</h1>
+    </div>
     <!-- Soil humidity -->
     <div class="block">
       <div class="block-top">
@@ -139,7 +142,11 @@
             <option class="select-list__value" value="Влажность почвы">Влажность почвы</option>
             <option class="select-list__value" value="Состояние форточек">Состояние форточек</option>
             <option class="select-list__value" value="Состояние полива">Состояние полива</option>
-        </select>
+          </select>
+        </div>
+        <div class="container">
+          <canvas id="humidity_air" width="600" height="400"></canvas>
+        </div>
       </div>
     </div>
 
