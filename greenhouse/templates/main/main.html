@@ -1,8 +1,0 @@
-{% extends 'layout/mainlayout.html' %} {% load static %} {% block main-tab-status %}active-tab-status{% endblock main-tab-status %} 
-{% block tab-name %}<h4>Панель управления</h4>{% endblock tab-name %} 
-{% block tab-description %} {% endblock tab-description%} 
-
-
-{% block main %}
-<div hx-get="/json/main" hx-trigger="every 2s"></div>
-{% endblock main %}

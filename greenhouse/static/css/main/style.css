@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --blue: #2f80ed;
+  --main-color: white;
+}
+
+.html {
+  padding: 0;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--blue);
+}
+
+/* Navbar */
+
+.navbar {
+  width: 48px;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--main-color);
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.navbar__logo {
+  height: 48px;
+  width: 48px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.navbar__tabs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: aquamarine;
+  padding: 0;
+  margin: 10px 0 0;
+  list-style-type: none;
+}
+
+.navbar__tab-button {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  background-color: green;
+  background-size: 32px 32px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Main */
+
+.main {
+  width: calc(100% - 48px);
+  position: relative;
+  left: 48px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* Tab-information */
+
+.tab-information {
+  width: 100%;
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+
+.tab-information__heading {
+  margin: 0;
+  padding: 0;
+  line-height: 1.15;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* Panel */
+
+.panel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Block */
+
+.block {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 8px 15px;
+}
+
+.block_content_chart {
+  width: 700px;
+}
+
+.block-top {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: var(--main-color);
+}
+
+.block-bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: var(--main-color);
+}
+
+.block__header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  top: 0;
+  left: 0;
+  margin-bottom: 10px;
+}
+
+.block__icon {
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.block__name {
+  padding: 0;
+  margin: 0 10px;
+  line-height: 1.05;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.block__list{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.block__line {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.line__name {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  line-height: .9;
+  font-size: 18px;
+}
+
+.line__meaning {
+  padding: 0;
+  margin: 0;
+}
+
+.line__watering {
+  padding: 0;
+  margin: 0;
+}
+
+.block__icon_place_soil-hummidity {
+  background-image: url('./images/icons/temperature.png');
+}
+
+.select-list {
+  position: absolute;
+  right: 0;
+  margin-left: 10px;
+}
