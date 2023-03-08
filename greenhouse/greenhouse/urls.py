@@ -9,9 +9,9 @@ urlpatterns = [
     path('main/', include('main.urls')),
 ]
 
-# urlpatterns += [
-#     path('jsons/', include('jsons.urls') )
-# ]
+urlpatterns += [
+    path('jsons/', include('utility.urls') )
+]
 #
 # setting
 # urlpatterns += [
