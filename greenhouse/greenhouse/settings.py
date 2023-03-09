@@ -65,11 +65,11 @@ TIME_ZONE = "Europe/Moscow"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CELERY_BROKER_URL = 'redis://127.0.0.1:6464'
-CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6464'
-CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_TIMEZONE = "Europe/Moscow"
+BROKER_URL = 'redis://localhost:6379/0'
+result_backend = 'redis://localhost:6379/0'
+accept_content = ['application/json']
+result_serializer = 'json'
+task_serializer = 'json'
+timezone = "Europe/Moscow"
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'

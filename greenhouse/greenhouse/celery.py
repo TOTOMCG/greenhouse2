@@ -3,12 +3,12 @@ import os
 from datetime import timedelta
 
 from celery import Celery
-from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'greenhouse.settings')
 
 app = Celery('greenhouse')
-app.config_from_object(settings, namespace='CELERY')
+
+app.config_from_object('django.conf:settings')
 
 # Load task modules from all registered Django apps.
 app.autodiscover_tasks()
