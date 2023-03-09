@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.returnjson, name='utility'),
+    path('<str:type>/<str:id>/', views.returnhttp, name='utility')
 ]
 
 
