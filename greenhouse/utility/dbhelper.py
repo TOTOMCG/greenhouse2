@@ -1,4 +1,4 @@
-from .models import FctRecord, DimComponentType, MapComponent, AvgRecord
+from .models import FctRecord, DimComponentType, MapComponent, AvgRecord, Settings
 
 
 def get_type_id(type_code):
@@ -20,3 +20,6 @@ def add_avg(type_code, datetime, avg_value):
 
 def get_avg(type_code):
     return AvgRecord.objects.filter(type_id=get_type_id(type_code)).last()
+
+def get_setting(name):
+    return Settings.objects.get(name=name)
