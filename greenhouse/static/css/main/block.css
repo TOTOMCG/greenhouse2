@@ -1,0 +1,127 @@
+/* Block */
+
+.block {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 8px 15px;
+}
+
+.block_content_chart {
+  width: 700px;
+}
+
+.block-top {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: var(--main-color);
+}
+
+.block-bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: var(--main-color);
+}
+
+.block__header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  top: 0;
+  left: 0;
+  margin-bottom: 10px;
+}
+
+.block__icon {
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.block__name {
+  padding: 0;
+  margin: 0 10px;
+  line-height: 1.05;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Average value */
+
+.block__average-value {
+  background-color: #f1f1f1 ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 35px;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.block__average-value__text {
+  font-weight: normal;
+  line-height: .9;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.block__average-value__meaning {
+  font-weight: normal;
+  line-height: .9;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.block__list{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.block__line {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.line__name {
+  margin: 0 5px;
+  padding: 0;
+  font-weight: normal;
+  line-height: .9;
+  font-size: 18px;
+}
+
+.line__meaning {
+  padding: 0;
+  margin: 0 5px;
+}
+
+.line__watering {
+  padding: 0;
+  margin: 0;
+}
+
+.block__icon_place_soil-hummidity {
+  background-image: url('./images/icons/temperature.png');
+}
+
+.select-list {
+  position: absolute;
+  right: 0;
+  margin-left: 10px;
+}
