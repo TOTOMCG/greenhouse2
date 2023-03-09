@@ -6,6 +6,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', RedirectView.as_view(url='/main', permanent=True)),
-    path('main/', include('main.urls')),
+    path('main/', include('main.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
+urlpatterns += [
+  path('utility/', include('utility.urls'))
+]
