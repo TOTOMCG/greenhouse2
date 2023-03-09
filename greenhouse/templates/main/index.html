@@ -3,6 +3,19 @@
 
 {% block main %}
 <!-- Control Panel -->
+  <div hx-get="/utility/temp/avg/" hx-trigger="load, every 5s" hx-target="#temp__avg"></div>
+  <div hx-get="/utility/temp/1/" hx-trigger="load, every 5s" hx-target="#temp__1"></div>
+  <div hx-get="/utility/temp/2/" hx-trigger="load, every 5s" hx-target="#temp__2"></div>
+  <div hx-get="/utility/temp/3/" hx-trigger="load, every 5s" hx-target="#temp__3"></div>
+  <div hx-get="/utility/temp/4/" hx-trigger="load, every 5s" hx-target="#temp__4"></div>
+  <div hx-get="/utility/soil_hum/1/" hx-trigger="load, every 5s" hx-target="#soil-hum__1"></div>
+  <div hx-get="/utility/soil_hum/2/" hx-trigger="load, every 5s" hx-target="#soil-hum__2"></div>
+  <div hx-get="/utility/soil_hum/3/" hx-trigger="load, every 5s" hx-target="#soil-hum__3"></div>
+  <div hx-get="/utility/soil_hum/4/" hx-trigger="load, every 5s" hx-target="#soil-hum__4"></div>
+  <div hx-get="/utility/soil_hum/5/" hx-trigger="load, every 5s" hx-target="#soil-hum__5"></div>
+  <div hx-get="/utility/soil_hum/6/" hx-trigger="load, every 5s" hx-target="#soil-hum__6"></div>
+
+
   <section class="panel" id="control-panel">
 
     <div class="tab-information">
@@ -18,32 +31,32 @@
         <ul class="block__list">
           <li class="block__line">
             <h3 class="line__name">Бороздка 1:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning" id="soil-hum__1"></p>
             <p class="line__watering">Полив:</p>
           </li>
           <li class="block__line">
             <h3 class="line__name">Бороздка 2:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning" id="soil-hum__2">44%</p>
             <p class="line__watering">Полив:</p>
           </li>
           <li class="block__line">
             <h3 class="line__name">Бороздка 3:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning" id="soil-hum__3">44%</p>
             <p class="line__watering">Полив:</p>
           </li>
           <li class="block__line">
             <h3 class="line__name">Бороздка 4:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning" id="soil-hum__4">44%</p>
             <p class="line__watering">Полив:</p>
           </li>
           <li class="block__line">
             <h3 class="line__name">Бороздка 5:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning" id="soil-hum__5">44%</p>
             <p class="line__watering">Полив:</p>
           </li>
           <li class="block__line">
             <h3 class="line__name">Бороздка 6:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning" id="soil-hum__6">44%</p>
             <p class="line__watering">Полив:</p>
           </li>
         </ul>
@@ -99,28 +112,28 @@
       <div class="block-top">
         <div class="block__header">
           <div class="block__icon block__icon_place_soil-hummidity"></div>
-          <h2 class="block__name">Влажность почвы</h2>
+          <h2 class="block__name">Температура</h2>
         </div>
         <div class="block__average-value">
           <p class="block__average-value__text">Среднее значение:</p>
-          <p class="block__average-value__meaning">23%</p>
+          <p class="block__average-value__meaning" id="temp__avg"></p>
         </div>
         <ul class="block__list">
           <li class="block__line">
             <h3 class="line__name">Датчик 1:</h3>
-            <p class="line__meaning">{{temp_1.value}}</p>
+            <p class="line__meaning" id="temp__1"></p>
           </li>
           <li class="block__line">
             <h3 class="line__name">Датчик 2:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning" id="temp__2"></p>
           </li>
           <li class="block__line">
             <h3 class="line__name">Датчик 3:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning" id="temp__3"></p>
           </li>
           <li class="block__line">
             <h3 class="line__name">Датчик 4:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning" id="temp__4"></p>
           </li>
         </ul>
       </div>
