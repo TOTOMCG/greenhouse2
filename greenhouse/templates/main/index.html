@@ -57,6 +57,10 @@
           <div class="block__icon"></div>
           <h2 class="block__name">Влажность почвы</h2>
         </div>
+        <div class="block__average-value">
+          <p class="block__average-value__text">Среднее значение:</p>
+          <p class="block__average-value__meaning">23%</p>
+        </div>
         <ul class="block__list">
           <li class="block__line">
             <h3 class="line__name">Датчик 1:</h3>
@@ -97,10 +101,14 @@
           <div class="block__icon block__icon_place_soil-hummidity"></div>
           <h2 class="block__name">Влажность почвы</h2>
         </div>
+        <div class="block__average-value">
+          <p class="block__average-value__text">Среднее значение:</p>
+          <p class="block__average-value__meaning">23%</p>
+        </div>
         <ul class="block__list">
           <li class="block__line">
             <h3 class="line__name">Датчик 1:</h3>
-            <p class="line__meaning">44%</p>
+            <p class="line__meaning">{{temp_1.value}}</p>
           </li>
           <li class="block__line">
             <h3 class="line__name">Датчик 2:</h3>
@@ -136,20 +144,18 @@
         <div class="block__header">
           <div class="block__icon block__icon_place_soil-hummidity"></div>
           <h2 class="block__name">Влажность почвы</h2>
-          <select name="select" class="select-list" id="select" onchange="submitForm();">
-            <option class="select-list__value" value="Температура">Температура</option>
-            <option class="select-list__value" value="Влажность воздуха" selected>Влажность воздуха</option>
-            <option class="select-list__value" value="Влажность почвы">Влажность почвы</option>
-            <option class="select-list__value" value="Состояние форточек">Состояние форточек</option>
-            <option class="select-list__value" value="Состояние полива">Состояние полива</option>
+          <select name="select" id="select" onchange="submitForm();">
+            <option value="Температура">Температура</option>
+            <option value="Влажность воздуха" selected>Влажность воздуха</option>
+            <option value="Влажность почвы">Влажность почвы</option>
+            <option value="Состояние форточек">Состояние форточек</option>
+            <option value="Состояние полива">Состояние полива</option>
           </select>
-        </div>
-        <div class="container">
-          <canvas id="humidity_air" width="600" height="400"></canvas>
         </div>
       </div>
     </div>
 
   </div>
+
   </section>
 {% endblock %}
