@@ -5,157 +5,173 @@
 
   <!-- Control Panel -->
   <section class="panel" id="control-panel">
-
     <div class="tab-information">
       <h1 class="tab-information__heading">Панель управления</h1>
     </div>
-    <!-- Soil humidity -->
-    <div class="block">
-      <div class="block-top">
-        <div class="block__header">
-          <div class="block__icon block__icon_place_soil-hummidity"></div>
-          <h2 class="block__name">Влажность почвы</h2>
+
+    <div class="panel__block-content">
+      <!-- Soil humidity -->
+      <div class="block">
+        <div class="block-top">
+          <div class="block__header">
+            <div class="block__icon block__icon_place_soil-hummidity"></div>
+            <h2 class="block__name">Влажность почвы</h2>
+          </div>
+          <ul class="block__list">
+            <li class="block__line">
+              <h3 class="line__name">Бороздка 1:</h3>
+              <p class="line__meaning" id="soil-hum__1"></p>
+              <p class="line__watering">Полив:</p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Бороздка 2:</h3>
+              <p class="line__meaning" id="soil-hum__2">44%</p>
+              <p class="line__watering">Полив:</p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Бороздка 3:</h3>
+              <p class="line__meaning" id="soil-hum__3">44%</p>
+              <p class="line__watering">Полив:</p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Бороздка 4:</h3>
+              <p class="line__meaning" id="soil-hum__4">44%</p>
+              <p class="line__watering">Полив:</p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Бороздка 5:</h3>
+              <p class="line__meaning" id="soil-hum__5">44%</p>
+              <p class="line__watering">Полив:</p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Бороздка 6:</h3>
+              <p class="line__meaning" id="soil-hum__6">44%</p>
+              <p class="line__watering">Полив:</p>
+            </li>
+          </ul>
         </div>
-        <ul class="block__list">
-          <li class="block__line">
-            <h3 class="line__name">Бороздка 1:</h3>
-            <p class="line__meaning" id="soil-hum__1"></p>
-            <p class="line__watering">Полив:</p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Бороздка 2:</h3>
-            <p class="line__meaning" id="soil-hum__2">44%</p>
-            <p class="line__watering">Полив:</p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Бороздка 3:</h3>
-            <p class="line__meaning" id="soil-hum__3">44%</p>
-            <p class="line__watering">Полив:</p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Бороздка 4:</h3>
-            <p class="line__meaning" id="soil-hum__4">44%</p>
-            <p class="line__watering">Полив:</p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Бороздка 5:</h3>
-            <p class="line__meaning" id="soil-hum__5">44%</p>
-            <p class="line__watering">Полив:</p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Бороздка 6:</h3>
-            <p class="line__meaning" id="soil-hum__6">44%</p>
-            <p class="line__watering">Полив:</p>
-          </li>
-        </ul>
+      </div>
+
+      <!-- Air humidity  -->
+      <div class="block">
+        <div class="block-top">
+          <div class="block__header">
+            <div class="block__icon block__icon_place_air-hummidity"></div>
+            <h2 class="block__name">Влажность воздуха</h2>
+          </div>
+          <div class="block__average-value">
+            <p class="block__average-value__text">Среднее значение:</p>
+            <p class="block__average-value__meaning" id="air-hum__avg"></p>
+          </div>
+          <ul class="block__list">
+            <li class="block__line">
+              <h3 class="line__name">Датчик 1:</h3>
+              <p class="line__meaning" id="air-hum__1"></p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Датчик 2:</h3>
+              <p class="line__meaning" id="air-hum__2"></p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Датчик 3:</h3>
+              <p class="line__meaning" id="air-hum__3"></p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Датчик 4:</h3>
+              <p class="line__meaning" id="air-hum__4"></p>
+            </li>
+          </ul>
+        </div>
+        <div class="block-bottom">
+          <div class="block__header">
+            <div class="block__icon  block__icon_place_watering"></div>
+            <h2 class="block__name">Полив</h2>
+          </div>
+          <ul class="block__list">
+            <li class="block__line">
+              <h3 class="line__name">Орошение:</h3>
+              <p class="line__meaning">44%</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Temperature -->
+      <div class="block">
+        <div class="block-top">
+          <div class="block__header">
+            <div class="block__icon block__icon_place_temperature"></div>
+            <h2 class="block__name">Температура</h2>
+          </div>
+          <div class="block__average-value">
+            <p class="block__average-value__text">Среднее значение:</p>
+            <p class="block__average-value__meaning" id="temp__avg"></p>
+          </div>
+          <ul class="block__list">
+            <li class="block__line">
+              <h3 class="line__name">Датчик 1:</h3>
+              <p class="line__meaning" id="temp__1"></p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Датчик 2:</h3>
+              <p class="line__meaning" id="temp__2"></p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Датчик 3:</h3>
+              <p class="line__meaning" id="temp__3"></p>
+            </li>
+            <li class="block__line">
+              <h3 class="line__name">Датчик 4:</h3>
+              <p class="line__meaning" id="temp__4"></p>
+            </li>
+          </ul>
+        </div>
+        <div class="block-bottom">
+          <div class="block__header">
+            <div class="block__icon block__icon_place_wind"></div>
+            <h2 class="block__name">Проветривание</h2>
+          </div>
+          <ul class="block__list">
+            <li class="block__line">
+              <h3 class="line__name">Форточки (открытие):</h3>
+              <p class="line__meaning">44%</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div class="block block_content_chart">
+        <div class="block-top">
+          <div class="block__header">
+            <div class="block__icon block__icon_place_chart"></div>
+            <h2 class="block__name">Влажность почвы</h2>
+            <select name="select" id="select" onchange="submitForm();">
+              <option value="Температура">Температура</option>
+              <option value="Влажность воздуха" selected>Влажность воздуха</option>
+              <option value="Влажность почвы">Влажность почвы</option>
+              <option value="Состояние форточек">Состояние форточек</option>
+              <option value="Состояние полива">Состояние полива</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Air humidity  -->
-    <div class="block">
-      <div class="block-top">
-        <div class="block__header">
-          <div class="block__icon block__icon_place_air-hummidity"></div>
-          <h2 class="block__name">Влажность воздуха</h2>
-        </div>
-        <div class="block__average-value">
-          <p class="block__average-value__text">Среднее значение:</p>
-          <p class="block__average-value__meaning" id="air-hum__avg"></p>
-        </div>
-        <ul class="block__list">
-          <li class="block__line">
-            <h3 class="line__name">Датчик 1:</h3>
-            <p class="line__meaning" id="air-hum__1"></p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Датчик 2:</h3>
-            <p class="line__meaning" id="air-hum__2"></p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Датчик 3:</h3>
-            <p class="line__meaning" id="air-hum__3"></p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Датчик 4:</h3>
-            <p class="line__meaning" id="air-hum__4"></p>
-          </li>
-        </ul>
-      </div>
-      <div class="block-bottom">
-        <div class="block__header">
-          <div class="block__icon  block__icon_place_watering"></div>
-          <h2 class="block__name">Полив</h2>
-        </div>
-        <ul class="block__list">
-          <li class="block__line">
-            <h3 class="line__name">Орошение:</h3>
-            <p class="line__meaning">44%</p>
-          </li>
-        </ul>
-      </div>
-    </div>
+  </section>
 
-    <!-- Temperature -->
-    <div class="block">
-      <div class="block-top">
-        <div class="block__header">
-          <div class="block__icon block__icon_place_temperature"></div>
-          <h2 class="block__name">Температура</h2>
-        </div>
-        <div class="block__average-value">
-          <p class="block__average-value__text">Среднее значение:</p>
-          <p class="block__average-value__meaning" id="temp__avg"></p>
-        </div>
-        <ul class="block__list">
-          <li class="block__line">
-            <h3 class="line__name">Датчик 1:</h3>
-            <p class="line__meaning" id="temp__1"></p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Датчик 2:</h3>
-            <p class="line__meaning" id="temp__2"></p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Датчик 3:</h3>
-            <p class="line__meaning" id="temp__3"></p>
-          </li>
-          <li class="block__line">
-            <h3 class="line__name">Датчик 4:</h3>
-            <p class="line__meaning" id="temp__4"></p>
-          </li>
-        </ul>
-      </div>
-      <div class="block-bottom">
-        <div class="block__header">
-          <div class="block__icon block__icon_place_wind"></div>
-          <h2 class="block__name">Проветривание</h2>
-        </div>
-        <ul class="block__list">
-          <li class="block__line">
-            <h3 class="line__name">Форточки (открытие):</h3>
-            <p class="line__meaning">44%</p>
-          </li>
-        </ul>
-      </div>
+  <!-- Database Panel -->
+  <section class="panel" id="database-panel">
+    <div class="tab-information">
+      <h1 class="tab-information__heading">База данных</h1>
     </div>
+  </section>
 
-    <!-- Chart -->
-    <div class="block block_content_chart">
-      <div class="block-top">
-        <div class="block__header">
-          <div class="block__icon block__icon_place_chart"></div>
-          <h2 class="block__name">Влажность почвы</h2>
-          <select name="select" id="select" onchange="submitForm();">
-            <option value="Температура">Температура</option>
-            <option value="Влажность воздуха" selected>Влажность воздуха</option>
-            <option value="Влажность почвы">Влажность почвы</option>
-            <option value="Состояние форточек">Состояние форточек</option>
-            <option value="Состояние полива">Состояние полива</option>
-          </select>
-        </div>
-      </div>
+  <!-- Setting Panel -->
+  <section class="panel" id="setting-panel">
+    <div class="tab-information">
+      <h1 class="tab-information__heading">Настройки</h1>
     </div>
-
   </section>
 
 {% endblock main %}
