@@ -28,6 +28,7 @@ class FctRecord(models.Model):
     component_id = models.ForeignKey(MapComponent, on_delete=models.CASCADE)
     value = models.FloatField()
 
+
 class Settings(models.Model):
     name = models.CharField(unique=True, max_length=13)
     value = models.CharField(unique=True, max_length=10)
