@@ -11,7 +11,22 @@
 </head>
 <body class="body">
   <main class="content">
-    <h1 class="maintext">404</h1>
+    <h1 class="maintext">Страница не найдена</h1>
+    <nav>
+      <a class="main-page__button" href="/main/">на главную страницу &#10148;</a>
+      <a class="debug__button" onclick="debugPanel()">debug &#9660;</a>
+    </nav>
+    <div class="debug" id="debug-panel">
+      <p class="debug_line">status-code: 404</p>
+      <p class="debug_line">API: Greenhouse-Simple-API (GS-API)</p>
+      <p class="debug_line">GS-API-version: 1.0</p>
+      <p class="debug_line">HTMX: true;</p>
   </main>
+
+  <script>
+    function debugPanel() {
+      document.getElementById('debug-panel').style.visibility = "visible";
+    }
+  </script>
 </body>
 </html>
