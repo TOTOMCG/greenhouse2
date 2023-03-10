@@ -156,3 +156,12 @@
   right: 0;
   margin-left: 10px;
 }
+
+.select-chart {
+  height: 100%;
+  align-self: end;
+}
+
+.select-chart:hover {
+  background-color: #f1f1f1;
+}
