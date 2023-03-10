@@ -98,6 +98,10 @@
   justify-content: space-between;
 }
 
+.block__line:first-child {
+  margin-top: 10px;
+}
+
 .line__name {
   margin: 0 5px;
   padding: 0;
@@ -117,7 +121,27 @@
 }
 
 .block__icon_place_soil-hummidity {
-  background-image: url('./images/icons/temperature.png');
+  background-image: url('../../img/icons/hum-soil.png');
+}
+
+.block__icon_place_air-hummidity {
+  background-image: url('../../img/icons/hum-air.png');
+}
+
+.block__icon_place_watering {
+  background-image: url('../../img/icons/watering.png');
+}
+
+.block__icon_place_temperature {
+  background-image: url('../../img/icons/temperature.png');
+}
+
+.block__icon_place_wind {
+  background-image: url('../../img/icons/wind.png');
+}
+
+.block__icon_place_chart {
+  background-image: url('../../img/icons/chart.png');
 }
 
 .select-list {

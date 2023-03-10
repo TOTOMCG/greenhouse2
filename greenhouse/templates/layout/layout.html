@@ -1,11 +1,21 @@
 {% load static %}
 
 <!DOCTYPE html>
+<!--
+╭━╮╱╭┳━━┳╮╭━┳━━┳━━━━┳━━━╮ ╭╮╭━┳━━┳━━━━┳━━━┳╮╱╭┳━╮╱╭┳━━━╮ ╭━━━┳━━━┳╮╱╱╭╮
+┃┃╰╮┃┣┫┣┫┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃ ┃┃┃╭┻┫┣┫╭╮╭╮┃╭━╮┃┃╱┃┃┃╰╮┃┃╭━━╯ ╰╮╭╮┃╭━━┫╰╮╭╯┃
+┃╭╮╰╯┃┃┃┃╰╯╯╱┃┃╰╯┃┃╰┫┃╱┃┃ ┃╰╯╯╱┃┃╰╯┃┃╰┫╰━━┫┃╱┃┃╭╮╰╯┃╰━━╮ ╱┃┃┃┃╰━━╋╮┃┃╭╯
+┃┃╰╮┃┃┃┃┃╭╮┃╱┃┃╱╱┃┃╱┃╰━╯┃ ┃╭╮┃╱┃┃╱╱┃┃╱╰━━╮┃┃╱┃┃┃╰╮┃┃╭━━╯ ╱┃┃┃┃╭━━╯┃╰╯┃
+┃┃╱┃┃┣┫┣┫┃┃╰┳┫┣╮╱┃┃╱┃╭━╮┃ ┃┃┃╰┳┫┣╮╱┃┃╱┃╰━╯┃╰━╯┃┃╱┃┃┃╰━━╮ ╭╯╰╯┃╰━━╮╰╮╭╯
+╰╯╱╰━┻━━┻╯╰━┻━━╯╱╰╯╱╰╯╱╰╯ ╰╯╰━┻━━╯╱╰╯╱╰━━━┻━━━┻╯╱╰━┻━━━╯ ╰━━━┻━━━╯╱╰╯
+-->
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{% static '/img/logo/logo.svg' %}">
+  <!-- CSS files -->
   <link rel="stylesheet" href="{% static 'css/main/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/main/navbar.css' %}">
   <link rel="stylesheet" href="{% static 'css/main/block.css' %}">
@@ -28,8 +38,29 @@
 
   <!-- Main content (jinja) -->
   <main class="main">
-    {% block main %}{% endblock %}
+    {% block main %}{% endblock main %}
   </main>
+
+  <!-- HTMX-element reboot & redirect helper -->
+  <div class="htmx">
+    <div hx-get="/utility/temp/avg/" hx-trigger="load, every 5s" hx-target="#temp__avg"></div>
+    <div hx-get="/utility/temp/1/" hx-trigger="load, every 5s" hx-target="#temp__1"></div>
+    <div hx-get="/utility/temp/2/" hx-trigger="load, every 5s" hx-target="#temp__2"></div>
+    <div hx-get="/utility/temp/3/" hx-trigger="load, every 5s" hx-target="#temp__3"></div>
+    <div hx-get="/utility/temp/4/" hx-trigger="load, every 5s" hx-target="#temp__4"></div>
+    <div hx-get="/utility/soil_hum/1/" hx-trigger="load, every 5s" hx-target="#soil-hum__1"></div>
+    <div hx-get="/utility/soil_hum/2/" hx-trigger="load, every 5s" hx-target="#soil-hum__2"></div>
+    <div hx-get="/utility/soil_hum/3/" hx-trigger="load, every 5s" hx-target="#soil-hum__3"></div>
+    <div hx-get="/utility/soil_hum/4/" hx-trigger="load, every 5s" hx-target="#soil-hum__4"></div>
+    <div hx-get="/utility/soil_hum/5/" hx-trigger="load, every 5s" hx-target="#soil-hum__5"></div>
+    <div hx-get="/utility/soil_hum/6/" hx-trigger="load, every 5s" hx-target="#soil-hum__6"></div>
+    <div hx-get="/utility/air_hum/avg/" hx-trigger="load, every 5s" hx-target="#air-hum__avg"></div>
+    <div hx-get="/utility/air_hum/1/" hx-trigger="load, every 5s" hx-target="#air-hum__1"></div>
+    <div hx-get="/utility/air_hum/2/" hx-trigger="load, every 5s" hx-target="#air-hum__2"></div>
+    <div hx-get="/utility/air_hum/3/" hx-trigger="load, every 5s" hx-target="#air-hum__3"></div>
+    <div hx-get="/utility/air_hum/4/" hx-trigger="load, every 5s" hx-target="#air-hum__4"></div>
+  </div>
+
 </body>
 </html>
 
