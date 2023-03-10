@@ -18,3 +18,9 @@ frontend
 * HTMX
 * Django (Templates & Static Files)
 * Google Font
+
+backend
+
+* Python
+* Django
+* Celery (Redis)
