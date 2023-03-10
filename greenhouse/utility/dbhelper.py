@@ -23,6 +23,15 @@ def get_avg(type_code):
     return AvgRecord.objects.filter(type_id=get_type_id(type_code)).last()
 
 
+def get_table(type_code):
+    f = AvgRecord.objects.values('datetime', 'avg_value')
+    h = {'time': [], 'value': []}
+    for c in f:
+        h['time'].append(c['datetime'])
+        h['value'].append(c['avg_value'])
+    return h
+
+
 def get_setting(name):
     return Settings.objects.get(name=name)
 
