@@ -115,6 +115,13 @@
   margin: 0 5px;
 }
 
+.line__icon {
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .line__watering {
   padding: 0;
   margin: 0;

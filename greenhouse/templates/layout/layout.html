@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{% static 'css/main/navbar.css' %}">
   <link rel="stylesheet" href="{% static 'css/main/block.css' %}">
   <link rel="stylesheet" href="{% static 'css/main/tab.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main/author.css' %}">
   <title>Система управления теплицей</title>
 </head>
 
@@ -29,7 +30,7 @@
 
   <!-- Navbar (left) -->
   <div class="navbar">
-    <div class="navbar__logo"></div>
+    <button class="navbar__logo" onclick="location.reload()"></button>
     <nav class="navbar__tabs">
       <button class="navbar__tab-button navbar__tab-button_content_control-panel" 
         id="control-panel__button"

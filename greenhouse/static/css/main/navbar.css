@@ -16,9 +16,15 @@
   height: 38px;
   width: 38px;
   margin-top: 10px;
+  background-color: white;
+  border: none;
   background-image: url('../../img/logo/logo.svg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.navbar__logo:hover {
+  cursor: pointer;
 }
 
 .navbar__tabs {
@@ -41,6 +47,9 @@
   border: none;
 }
 
+.navbar__tab-button:hover {
+  cursor: pointer;
+}
 
 .navbar__tab-button__icon {
   margin: auto;
