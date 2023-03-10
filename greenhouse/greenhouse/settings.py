@@ -3,9 +3,9 @@ from pathlib import Path, os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "DJANGO-SECRET-DEDKOV-POMIDORY-TREUGOLNY-PASSWORD-KEY-#$%^)$()-g^2612-mn$772-g2g312"
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['10.10.10.55', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
@@ -39,11 +39,21 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [
+
+"""STATICFILES_DIRS = [
     BASE_DIR / "static"
-]
+]"""
 
 STATIC_URL = "static/"
+
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+  
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # MEDIA_URL = '/media/'

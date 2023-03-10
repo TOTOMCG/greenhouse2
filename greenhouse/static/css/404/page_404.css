@@ -1,0 +1,22 @@
+
+.body {
+  background-color: aqua;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: end;
+  width: 100vw;
+  height: 35vh;
+}
+
+.content {
+  background-color: red;
+}
+
+.maintext {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 50px;
+  font-weight: 700;
+}
