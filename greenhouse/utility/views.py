@@ -11,5 +11,5 @@ def returnvalue(request, type, id):
         return HttpResponse(dbhelper.get(type, id).value)
 
 
-def returnchart(request, type):
-    return render(request, 'charts/' + type + '.html', context=dbhelper.get_table(type))
+def returnchart(request):
+    return render(request, 'layout/charts_layout.html', context=dbhelper.get_table('avg_air_hum'))

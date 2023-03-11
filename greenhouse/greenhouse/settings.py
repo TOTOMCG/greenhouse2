@@ -3,7 +3,7 @@ from pathlib import Path, os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "DJANGO-SECRET-DEDKOV-POMIDORY-TREUGOLNY-PASSWORD-KEY-#$%^)$()-g^2612-mn$772-g2g312"
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 

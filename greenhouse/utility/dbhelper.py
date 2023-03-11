@@ -27,7 +27,7 @@ def get_table(type_code):
     f = AvgRecord.objects.values('datetime', 'avg_value')
     h = {'time': [], 'value': []}
     for c in f:
-        h['time'].append(c['datetime'])
+        h['time'].append(12)
         h['value'].append(c['avg_value'])
     return h
 
