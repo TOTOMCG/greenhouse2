@@ -1,4 +1,4 @@
-function openControlPanel() {
+function openControlPanel() { 
     document.getElementById('control-panel').style.visibility = "visible";
     document.getElementById('setting-panel').style.visibility = "hidden";
     document.getElementById('database-panel').style.visibility = "hidden";
