@@ -16,7 +16,7 @@
               type: 'line',
               data: {
                   labels: [
-                      {% for i in {% block  time %}{% endblock  time %} %}
+                      {% for i in {{time.value}} %}
                           {{i}},
                       {% endfor %}
                   ],
