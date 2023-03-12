@@ -1,70 +1,56 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-7">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="{% static '/img/logo/logo.svg' %}">
-  <title>Система упраления теплицей</title>
 </head>
 <body>
-  <style>
-    body {
-      height: 100%;
-    }
-  </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-  <div class="container">
-    <canvas id="temperature" width="600" height="400"></canvas>
-  </div>
-  <script>
-      if (localStorage.getItem('select') != 'Температура') {
-          document.getElementById('temperature').style.display = 'none'
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+<div class="container">
+  <canvas id="temperature" width="600" height="400"></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('temperature').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: {{datetime|safe}},
+        datasets: [{
+          label: 'value',
+          data: {{value}},
+          fill: false,
+          backgroundColor: 'rgba(216, 27, 96, 0.6)',
+          borderColor: 'rgba(216, 27, 96, 1)',
+          borderWidth: 1,
+          pointRadius: 4,
+          pointHoverRadius: 7
+        }]
+      },
+      options: {
+        responsive: false,
+        legend: {
+          display: false
+        },
+        title: {
+          display: false,
+        },
+        scales: {
+          xAxes: [{
+            type: 'time',
+          }],
+          yAxes: [{
+            ticks: {
+              min: 0,
+              max: 100
+            },
+            scaleLabel: {
+              display: true,
+            }
+          }]
+        }
       }
-      var ctx = document.getElementById('temperature').getContext('2d');
-      var myChart = new Chart(ctx, {
-          type: 'line',
-          data: {
-              labels: [
-                  {% for i in time %}
-                      {{i}},
-                  {% endfor %}
-              ],
-              datasets: [{
-                  fill: false,
-                  data: [
-                      {% for i in value %}
-                          {{i}},
-                      {% endfor %}
-                  ],
-                  backgroundColor: 'rgba(216, 27, 96, 0.6)',
-                  borderColor: 'rgba(216, 27, 96, 1)',
-                  borderWidth: 1
-              }]
-          },
-          options: {
-              legend: {
-                  display: false
-              },
-              title: {
-                  display: true,
-                  text: 'Температура',
-                  position: 'top',
-                  fontSize: 16,
-                  padding: 20
-              },
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          min: 0,
-                          max: 100
-                      }
-                  }]
-              }
-          }
-      });
-  </script>
-
+    });
+</script>
 </body>
 </html>

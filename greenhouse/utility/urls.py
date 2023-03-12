@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path('values/<str:type>/<str:id>/', views.returnvalue),
-    path('charts/', views.returnchart)
+    path('charts/<str:type>', views.returnchart)
 ]
 
 

@@ -19,7 +19,7 @@ class AvgRecord(models.Model):
     id = models.AutoField(primary_key=True)
     datetime = models.DateTimeField()
     type_id = models.ForeignKey(DimComponentType, on_delete=models.CASCADE)
-    avg_value = models.FloatField()
+    value = models.FloatField()
 
 
 class FctRecord(models.Model):
