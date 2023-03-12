@@ -8,7 +8,7 @@ def returnvalue(request, type, id):
     if id == 'avg':
         return HttpResponse(dbhelper.get_avg(type).value)
     else:
-        return HttpResponse(dbhelper.get(type, id).value)
+        return HttpResponse(dbhelper.get_last(type, id).value)
 
 
 def returnchart(request,type):

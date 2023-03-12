@@ -12,7 +12,11 @@ def add(type_code, device_id, datetime, value):
 
 def get(type_code, device_id):
     component_id = MapComponent.objects.get(ext_device_id=device_id, type_id=get_type_id(type_code))
-    return FctRecord.objects.filter(component_id=component_id).last()
+    return FctRecord.objects.filter(component_id=component_id)
+
+
+def get_last(type_code, device_id):
+    return get(type_code, device_id).last()
 
 
 def add_avg(type_code, datetime, value):
@@ -24,17 +28,19 @@ def get_avg(type_code):
 
 
 def get_table(type_code):
+    r = {'datetime': [], 'value': []}
     match type_code:
         case 'avg_air_hum':
-            f = AvgRecord.objects.filter(type_id=get_type_id('air_hum')).values('datetime', 'value')
+            s = AvgRecord.objects.filter(type_id=get_type_id('air_hum'))
         case 'avg_temp':
-            f = AvgRecord.objects.filter(type_id=get_type_id('temp')).values('datetime', 'value')
-
-    r = {'datetime': [], 'value': []}
-    for c in f:
+            s = AvgRecord.objects.filter(type_id=get_type_id('temp'))
+        case 'temp':
+            for i in range(1,5):
+                s = get(type_code='temp', device_id=i)
+    print(s)
+    for c in s:
         r['datetime'].append(c['datetime'].strftime("%Y-%m-%d %H:%M:%S"))
         r['value'].append(c['value'])
-    print(r)
     return r
 
 
