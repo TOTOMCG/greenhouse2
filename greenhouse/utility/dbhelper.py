@@ -60,7 +60,6 @@ def get_table(type_code):
                 r['datetime'].append(c.datetime.strftime("%Y-%m-%d %H:%M:%S"))
             a.append(c.value)
         r['value'].append(a)
-    print(r)
     return r
 
 
