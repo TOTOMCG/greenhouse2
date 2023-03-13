@@ -148,6 +148,13 @@
   <section class="panel" id="charts-panel">
     <div class="tab-information">
       <h1 class="tab-information__heading">Графики</h1>
+      <select class="select-chart" name="select" id="select" onchange="submitForm();">
+        <option class="select-chart__option" value="Температура">Температура</option>
+        <option class="select-chart__option" value="Влажность воздуха" selected>Влажность воздуха</option>
+        <option class="select-chart__option" value="Влажность почвы">Влажность почвы</option>
+        <option class="select-chart__option" value="Состояние форточек">Состояние форточек</option>
+        <option class="select-chart__option" value="Состояние полива">Состояние полива</option>
+      </select>
     </div>
 
     <div class="panel__block-content">
@@ -155,17 +162,7 @@
       <!-- Chart -->
       <div class="block block_content_chart">
         <div class="block-top">
-          <div class="block__header">
-            <div class="block__icon block__icon_place_chart"></div>
-            <h2 class="block__name">График</h2>
-            <select class="select-chart" name="select" id="select" onchange="submitForm();">
-              <option class="select-chart__option" value="Температура">Температура</option>
-              <option class="select-chart__option" value="Влажность воздуха" selected>Влажность воздуха</option>
-              <option class="select-chart__option" value="Влажность почвы">Влажность почвы</option>
-              <option class="select-chart__option" value="Состояние форточек">Состояние форточек</option>
-              <option class="select-chart__option" value="Состояние полива">Состояние полива</option>
-            </select>
-          </div>
+          
         </div>
       </div>
 

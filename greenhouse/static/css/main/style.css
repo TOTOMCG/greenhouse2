@@ -30,8 +30,18 @@
 
 .tab-information {
   width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   color: var(--main-color);
   margin-bottom: 10px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.select-chart {
+  margin-top: auto;
+  margin-bottom: auto;
   margin-left: 10px;
 }
 
