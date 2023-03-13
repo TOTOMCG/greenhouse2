@@ -126,11 +126,11 @@
   margin: 0;
 }
 
-.block__icon_place_soil-hummidity {
+.block__icon_place_soil-humidity {
   background-image: url('../../img/icons/soil_hum.svg');
 }
 
-.block__icon_place_air-hummidity {
+.block__icon_place_air-humidity {
   background-image: url('../../img/icons/air_hum.svg');
 }
 

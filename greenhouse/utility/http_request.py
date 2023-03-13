@@ -4,6 +4,7 @@ from django.utils import timezone
 
 url = 'https://dt.miet.ru/ppo_it/api/'
 
+
 def get(type_code, device_id, datetime):
     values = []
     res = requests.get(url + type_code + '/' + str(device_id))
@@ -21,7 +22,7 @@ def get(type_code, device_id, datetime):
     return values
 
 
-def patch(token,type_code, value, device_id=0):
+def patch(token, type_code, value, device_id=0):
     if device_id:
         response = requests.patch(url + type_code, params={'id': device_id, 'state': value},
                                   headers={"X-Auth-Token:" + token})

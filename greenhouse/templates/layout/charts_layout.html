@@ -8,24 +8,30 @@
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 <div class="container">
-  <canvas id="chart" width="600" height="400"></canvas>
+  <canvas id="chart" width="600" height="300"></canvas>
 </div>
 <script>
+    var colors = [ 'rgba(54,162,235,1)', 'rgba(255,101,134,1)', 'rgba(255,205,86,1)', 'rgba(153,102,255,1)','rgba(255,159,64,1)', 'rgba(75,192,192,1)'];
+    var currentColor = -1;
+    function getNextColor() {
+      currentColor++;
+      return colors[currentColor];
+    }
     var ctx = document.getElementById('chart').getContext('2d');
     var chart = new Chart(ctx, {
       type: 'line',
       data: {
         labels: {{datetime|safe}},
-        datasets: [{
-          label: 'value',
-          data: {{value}},
-          fill: false,
-          backgroundColor: 'rgba(216, 27, 96, 0.6)',
-          borderColor: 'rgba(216, 27, 96, 1)',
-          borderWidth: 1,
-          pointRadius: 4,
-          pointHoverRadius: 7
-        }]
+        datasets: [
+          {% for i in value %}
+              {data: {{ i }},
+              fill: false,
+              backgroundColor: getNextColor(),
+              borderColor: colors[currentColor],
+              borderWidth: 1.7{,
+              pointRadius: 2.5},
+          {% endfor %}
+        ]
       },
       options: {
         animation: false,
@@ -37,16 +43,12 @@
           display: false,
         },
         scales: {
-          xAxes: [
+          xAxes: [{
+            ticks: {
+              display: false
+            }
           }],
           yAxes: [{
-            ticks: {
-              min: 0,
-              max: 100
-            },
-            scaleLabel: {
-              display: true,
-            }
           }]
         }
       }

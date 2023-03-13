@@ -16,7 +16,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'get_all-every-10-seconds': {
         'task': 'utility.tasks.get_all',
-        'schedule': timedelta(seconds=3),
+        'schedule': timedelta(seconds=10),
     },
 }
 
