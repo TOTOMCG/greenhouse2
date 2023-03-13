@@ -84,6 +84,9 @@
   padding: 0;
 }
 
+.block_place_settings {
+  width: 500px;
+}
 
 .block__list{
   list-style-type: none;
@@ -149,6 +152,10 @@
 
 .block__icon_place_chart {
   background-image: url('../../img/icons/chart.svg');
+}
+
+.block__icon_place_settings {
+  background-image: url('../../img/icons/settings.svg');
 }
 
 .select-list {

@@ -54,3 +54,10 @@
 .navbar__tab-button__icon {
   margin: auto;
 }
+
+.navbar__tab-button_content_charts {
+  background-image: url('../../img/icons/chart.svg');
+  background-size: 28px 28px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
