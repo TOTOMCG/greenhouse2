@@ -1,21 +1,21 @@
 .block__icon_place_author {
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-image: url('../../img/icons/author.svg');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-image: url('../../img/icons/author.svg');
 }
 
 .line__icon_place_shirn {
-    background-image: url('../../img/icons/wedding_sochi_2005/sheep.gif');
+  background-image: url('../../img/icons/wedding_sochi_2005/sheep.gif');
 }
 
 .line__icon_place_krina {
-    background-image: url('../../img/icons/wedding_sochi_2005/dota2.png');
+  background-image: url('../../img/icons/wedding_sochi_2005/dota2.png');
 }
 
 .line__icon_place_tupid {
-    background-image: url('../../img/icons/wedding_sochi_2005/terraria.png');
+  background-image: url('../../img/icons/wedding_sochi_2005/terraria.png');
 }
 
 .line__icon_place_bogoa {
-    background-image: url('../../img/icons/wedding_sochi_2005/kg.png');
+  background-image: url('../../img/icons/wedding_sochi_2005/kg.png');
 }

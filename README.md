@@ -11,13 +11,13 @@
 
 frontend
 
-* HTML 5
-* CSS 3
-* SASS & SCSS *(в процессе разработки)*
-* JavaScript (ES6)
-* HTMX
-* Django (Templates & Static Files)
-* Google Font
+* **HTML 5 -** язык разметки
+* **CSS 3 -** стилизация компанентов сайта
+* **SASS & SCSS** *(в процессе разработки)* - языки программирования на основе CSS
+* **JavaScript (ES6)** - для осуществления скриптов клиентской части
+* **HTMX (1.8.6)**  - Подгрузка данных с одной страницы на другую с помощью GET запроса
+* **Django (Templates & Static Files)**
+* **Google Fonts (Inter, sans-serif)** - Шрифт Inter без засечек
 
 backend
 

@@ -16,8 +16,6 @@
   background-color: var(--blue);
 }
 
-/* Main */
-
 .main {
   width: calc(100% - 48px);
   position: relative;
@@ -25,8 +23,6 @@
   padding: 15px;
   box-sizing: border-box;
 }
-
-/* Tab-information */
 
 .tab-information {
   width: 100%;
@@ -52,8 +48,6 @@
   font-size: 30px;
   font-weight: 600;
 }
-
-/* Panel */
 
 .panel__block-content {
   width: 100%;
