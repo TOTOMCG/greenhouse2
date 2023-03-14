@@ -18,34 +18,52 @@
         </div>
         <ul class="block__list">
           <li class="block__line">
-            <h3 class="line__name">Бороздка 1:</h3>
+            <div class="line__first-block">
+              <h3 class="line__name">Бороздка 1:</h3>
+              <p class="line__watering">Полив:</p>
+              <input class="checkbox" type="checkbox"/>
+            </div>
             <p class="line__meaning" id="soil-hum__1"></p>
-            <p class="line__watering">Полив:</p>
           </li>
           <li class="block__line">
-            <h3 class="line__name">Бороздка 2:</h3>
-            <p class="line__meaning" id="soil-hum__2">44%</p>
-            <p class="line__watering">Полив:</p>
+            <div class="line__first-block">
+              <h3 class="line__name">Бороздка 2:</h3>
+              <p class="line__watering">Полив:</p>
+              <input class="checkbox" type="checkbox"/>
+            </div>
+            <p class="line__meaning" id="soil-hum__2"></p>
           </li>
           <li class="block__line">
-            <h3 class="line__name">Бороздка 3:</h3>
-            <p class="line__meaning" id="soil-hum__3">44%</p>
-            <p class="line__watering">Полив:</p>
+            <div class="line__first-block">
+              <h3 class="line__name">Бороздка 3:</h3>
+              <p class="line__watering">Полив:</p>
+              <input class="checkbox" type="checkbox"/>
+            </div>
+            <p class="line__meaning" id="soil-hum__3"></p>
           </li>
           <li class="block__line">
-            <h3 class="line__name">Бороздка 4:</h3>
-            <p class="line__meaning" id="soil-hum__4">44%</p>
-            <p class="line__watering">Полив:</p>
+            <div class="line__first-block">
+              <h3 class="line__name">Бороздка 4:</h3>
+              <p class="line__watering">Полив:</p>
+              <input class="checkbox" type="checkbox"/>
+            </div>
+            <p class="line__meaning" id="soil-hum__4"></p>
           </li>
           <li class="block__line">
-            <h3 class="line__name">Бороздка 5:</h3>
-            <p class="line__meaning" id="soil-hum__5">44%</p>
-            <p class="line__watering">Полив:</p>
+            <div class="line__first-block">
+              <h3 class="line__name">Бороздка 5:</h3>
+              <p class="line__watering">Полив:</p>
+              <input class="checkbox" type="checkbox"/>
+            </div>
+            <p class="line__meaning" id="soil-hum__5"></p>
           </li>
           <li class="block__line">
-            <h3 class="line__name">Бороздка 6:</h3>
-            <p class="line__meaning" id="soil-hum__6">44%</p>
-            <p class="line__watering">Полив:</p>
+            <div class="line__first-block">
+              <h3 class="line__name">Бороздка 6:</h3>
+              <p class="line__watering">Полив:</p>
+              <input class="checkbox" type="checkbox"/>
+            </div>
+            <p class="line__meaning" id="soil-hum__6"></p>
           </li>
         </ul>
       </div>
@@ -89,7 +107,7 @@
         <ul class="block__list">
           <li class="block__line">
             <h3 class="line__name">Орошение:</h3>
-            <p class="line__meaning">44%</p>
+            <input type="checkbox"/>
           </li>
         </ul>
       </div>
@@ -133,7 +151,7 @@
         <ul class="block__list">
           <li class="block__line">
             <h3 class="line__name">Форточки (открытие):</h3>
-            <p class="line__meaning">44%</p>
+            <input type="checkbox"/>
           </li>
         </ul>
       </div>
@@ -160,7 +178,7 @@
     <!-- Chart -->
     <div class="block block_content_chart">
       <div class="block-top">
-
+        <div hx-get="/utility/charts/temp" hx-trigger="load, every 10s"></div>
       </div>
     </div>
 

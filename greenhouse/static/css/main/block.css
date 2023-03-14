@@ -6,7 +6,7 @@
 }
 
 .block_content_chart {
-  width: 95vw;
+  width: 1150px;
 }
 
 .block-top {
@@ -104,6 +104,7 @@
 .line__name {
   margin: 0 5px;
   padding: 0;
+  margin: 0;
   font-weight: normal;
   line-height: .9;
   font-size: 18px;
@@ -123,7 +124,14 @@
 
 .line__watering {
   padding: 0;
-  margin: 0;
+  margin-left: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.line__first-block {
+  display: flex;
+  flex-direction: row;
 }
 
 .block__icon_place_soil-humidity {
