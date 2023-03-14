@@ -31,4 +31,4 @@ class FctRecord(models.Model):
 
 class Settings(models.Model):
     name = models.CharField(unique=True, max_length=13)
-    value = models.CharField(unique=True, max_length=10)
+    value = models.CharField(max_length=10)

@@ -68,4 +68,6 @@ def get_setting(name):
 
 
 def update_setting(name, value):
-    get_setting(name).update(value)
+    setting = get_setting(name)
+    setting.value = value
+    setting.save()
