@@ -67,3 +67,12 @@
   margin-bottom: 5px;
   margin-left: 10px;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible !important;
+  z-index: 2;
+}
