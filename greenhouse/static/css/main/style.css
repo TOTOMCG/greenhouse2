@@ -55,3 +55,15 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.input__settings {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+}
+
+.save-button {
+  margin-top: 8px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}

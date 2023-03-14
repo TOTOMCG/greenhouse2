@@ -13,4 +13,11 @@ def returnmain(request):
     # }
     # if request.method == 'POST':
     #     dbhelper.update_setting('token', request.POST.get('token'))
+    if request.method == 'POST':
+        # dbhelper.update_setting('token', request.POST.get('token'))
+        print(request.POST.get('frequency'))
+        print(request.POST.get('min_temp'))
+        print(request.POST.get('max_air_hum'))
+        print(request.POST.get('max_soil_hum'))
+        print(request.POST.get('token'))
     return render(request, 'main/index.html')
