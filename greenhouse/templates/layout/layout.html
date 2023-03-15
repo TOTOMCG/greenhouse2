@@ -99,13 +99,13 @@
     <div hx-get="/utility/values/air_hum/2/" hx-trigger="load, every 10s" hx-target="#air-hum__2"></div>
     <div hx-get="/utility/values/air_hum/3/" hx-trigger="load, every 10s" hx-target="#air-hum__3"></div>
     <div hx-get="/utility/values/air_hum/4/" hx-trigger="load, every 10s" hx-target="#air-hum__4"></div>
-    <div hx-get="/utility/charts/temp" hx-target="#temp" hx-trigger="load, every 10s"></div>
-    <div hx-get="/utility/values/air_hum/4/" hx-target="#avg_temp" hx-trigger="load, every 10s"></div>
-    <div hx-get="/utility/charts/air_hum" hx-target="#air_hum" hx-trigger="load, every 10s"></div>
-    <div hx-get="/utility/values/air_hum/4/" hx-target="#avg_air_hum" hx-trigger="load, every 10s"></div>
-    <div hx-get="/utility/values/air_hum/4/" hx-target="#soil_hum" hx-trigger="load, every 10s"></div>
-    <div hx-get="/utility/values/air_hum/4/" hx-target="#fork_drive" hx-trigger="load, every 10s"></div>
-    <div hx-get="/utility/values/air_hum/4/" hx-target="#watering" hx-trigger="load, every 10s"></div>
+    <div hx-get="/utility/charts/temp" hx-trigger="load, every 10s" hx-target="#temp_chart"></div>
+    <div hx-get="/utility/charts/avg_temp" hx-trigger="load, every 10s" hx-target="#avg_temp_chart"></div>
+    <div hx-get="/utility/charts/air_hum" hx-trigger="load, every 10s" hx-target="#air_hum_chart"></div>
+    <div hx-get="/utility/charts/avg_air_hum" hx-trigger="load, every 10s" hx-target="#avg_air_hum_chart"></div>
+    <div hx-get="/utility/charts/soil_hum" hx-trigger="load, every 10s" hx-target="#soil_hum_chart"></div>
+    <div hx-get="/utility/charts/fork_drive" hx-trigger="load, every 10s" hx-target="#fork_drive_chart"></div>
+    <div hx-get="/utility/charts/watering" hx-trigger="load, every 10s" hx-target="#watering_chart"></div>
   </div>
 
   <!-- Scripts -->
@@ -136,6 +136,7 @@
       document.getElementById('setting-panel').style.position = "absolute";
       document.getElementById('database-panel').style.position = "absolute";
       document.getElementById('charts-panel').style.position = "absolute";
+      document.getElementsByClassName('body').style.setAttribute('style', 'color:red; border: 1px solid blue;');
     }
 
     function openChartsPanel() {
