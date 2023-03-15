@@ -7,12 +7,25 @@
   <h1 class="tab-information__heading">Панель управления</h1>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!-- Import Jquery Here-->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.checkbox').change(function() {
+      $.post("/main/", {
+        type: 'checkbox',
+        name: this.name,
+        value: this.checked,
+        csrfmiddlewaretoken: '{{ csrf_token }}'
+      });
+    });
+  });
+</script>
 <div class="panel__block-content">
 
   <!-- Soil humidity -->
   <div class="block">
     <div class="block-top">
-      <div class="block__header">
+      <div class="block-top__header">
         <div class="block__icon block__icon_place_soil-humidity"></div>
         <h2 class="block__name">Влажность почвы %</h2>
       </div>
@@ -21,7 +34,12 @@
           <div class="line__first-block">
             <h3 class="line__name">Бороздка 1:</h3>
             <p class="line__watering">Полив:</p>
-            <input class="checkbox" type="checkbox"/>
+            <div class="switcher-block">
+              <label class="switch">
+                <input class="checkbox" type="checkbox" name="watering-1">
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
           <p class="line__meaning" id="soil-hum__1"></p>
         </li>
@@ -29,7 +47,12 @@
           <div class="line__first-block">
             <h3 class="line__name">Бороздка 2:</h3>
             <p class="line__watering">Полив:</p>
-            <input class="checkbox" type="checkbox"/>
+            <div class="switcher-block">
+              <label class="switch">
+                <input class="checkbox" type="checkbox" name="watering-2">
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
           <p class="line__meaning" id="soil-hum__2"></p>
         </li>
@@ -37,7 +60,12 @@
           <div class="line__first-block">
             <h3 class="line__name">Бороздка 3:</h3>
             <p class="line__watering">Полив:</p>
-            <input class="checkbox" type="checkbox"/>
+            <div class="switcher-block">
+              <label class="switch">
+                <input class="checkbox" type="checkbox" name="watering-3">
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
           <p class="line__meaning" id="soil-hum__3"></p>
         </li>
@@ -45,7 +73,12 @@
           <div class="line__first-block">
             <h3 class="line__name">Бороздка 4:</h3>
             <p class="line__watering">Полив:</p>
-            <input class="checkbox" type="checkbox"/>
+            <div class="switcher-block">
+              <label class="switch">
+                <input class="checkbox" type="checkbox" name="watering-4">
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
           <p class="line__meaning" id="soil-hum__4"></p>
         </li>
@@ -53,7 +86,12 @@
           <div class="line__first-block">
             <h3 class="line__name">Бороздка 5:</h3>
             <p class="line__watering">Полив:</p>
-            <input class="checkbox" type="checkbox"/>
+            <div class="switcher-block">
+              <label class="switch">
+                <input class="checkbox" type="checkbox" name="watering-5">
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
           <p class="line__meaning" id="soil-hum__5"></p>
         </li>
@@ -61,7 +99,12 @@
           <div class="line__first-block">
             <h3 class="line__name">Бороздка 6:</h3>
             <p class="line__watering">Полив:</p>
-            <input class="checkbox" type="checkbox"/>
+            <div class="switcher-block">
+              <label class="switch">
+                <input class="checkbox" type="checkbox" name="watering-6">
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
           <p class="line__meaning" id="soil-hum__6"></p>
         </li>
@@ -72,7 +115,7 @@
   <!-- Air humidity  -->
   <div class="block">
     <div class="block-top">
-      <div class="block__header">
+      <div class="block-top__header">
         <div class="block__icon block__icon_place_air-humidity"></div>
         <h2 class="block__name">Влажность воздуха %</h2>
       </div>
@@ -100,23 +143,23 @@
       </ul>
     </div>
     <div class="block-bottom">
-      <div class="block__header">
+      <div class="block-bottom__header">
         <div class="block__icon  block__icon_place_watering"></div>
-        <h2 class="block__name">Полив</h2>
+        <h2 class="block__name">Увлажнение воздуха</h2>
+        <div class="switcher-block">
+          <label class="switch">
+            <input class="checkbox" type="checkbox" name="total_hum">
+            <span class="slider round"></span>
+          </label>
+        </div>
       </div>
-      <ul class="block__list">
-        <li class="block__line">
-          <h3 class="line__name">Орошение:</h3>
-          <input type="checkbox"/>
-        </li>
-      </ul>
     </div>
   </div>
 
   <!-- Temperature -->
   <div class="block">
     <div class="block-top">
-      <div class="block__header">
+      <div class="block-top__header">
         <div class="block__icon block__icon_place_temperature"></div>
         <h2 class="block__name">Температура &deg;С</h2>
       </div>
@@ -144,16 +187,16 @@
       </ul>
     </div>
     <div class="block-bottom">
-      <div class="block__header">
+      <div class="block-bottom__header">
         <div class="block__icon block__icon_place_wind"></div>
         <h2 class="block__name">Проветривание</h2>
+        <div class="switcher-block">
+          <label class="switch">
+            <input class="checkbox" type="checkbox" name="fork_drive">
+            <span class="slider round"></span>
+          </label>
+        </div>
       </div>
-      <ul class="block__list">
-        <li class="block__line">
-          <h3 class="line__name">Форточки (открытие):</h3>
-          <input type="checkbox"/>
-        </li>
-      </ul>
     </div>
   </div>
 
@@ -207,7 +250,7 @@
     {% csrf_token %}
     <div class="block block_place_settings">
       <div class="block-top">
-        <div class="block__header">
+        <div class="block-top__header">
           <div class="block__icon block__icon_place_settings"></div>
           <h2 class="block__name">Параметры</h2>
         </div>
@@ -258,7 +301,7 @@
   <!-- Author block -->
   <div class="block">
     <div class="block-top">
-      <div class="block__header">
+      <div class="block-top__header">
         <div class="block__icon block__icon_place_author"></div>
         <h2 class="block__name">Авторы проекта</h2>
       </div>

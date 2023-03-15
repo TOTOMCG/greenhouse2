@@ -1,6 +1,6 @@
 import requests
 from . import dbhelper
-from django.utils import timezone
+from greenhouse.greenhouse.settings import timezone
 
 url = 'https://dt.miet.ru/ppo_it/api/'
 
@@ -29,4 +29,4 @@ def patch(token, type_code, value, device_id=0):
     else:
         response = requests.patch(url + type_code, params={'state': value},
                                   headers={"X-Auth-Token:" + token})
-    dbhelper.add(type_code, device_id, timezone.now(), value)
+    dbhelper.add(type_code, device_id, timezone.localtime(), value)

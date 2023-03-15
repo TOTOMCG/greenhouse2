@@ -28,13 +28,21 @@
   background-color: var(--main-color);
 }
 
-.block__header {
+.block-top__header {
   display: flex;
   position: relative;
   align-items: center;
   top: 0;
   left: 0;
   margin-bottom: 10px;
+}
+
+.block-bottom__header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  top: 0;
+  left: 0;
 }
 
 .block__icon {
