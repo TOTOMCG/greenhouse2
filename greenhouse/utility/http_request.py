@@ -24,6 +24,6 @@ def get(type_code, device_id, datetime):
 
 
 def patch(type_code, device_id, value):
-    response = requests.patch(url + type_code, params={'id': device_id, 'state': value},
-                              headers={"X-Auth-Token":dbhelper.get_setting('token').value})
+    # response = requests.patch(url + type_code, params={'id': device_id, 'state': value},
+    #                           headers={"X-Auth-Token":dbhelper.get_setting('token').value})
     dbhelper.add(type_code, device_id, timezone.localtime(), value)
