@@ -30,7 +30,7 @@ def get_last(type_code, device_id=0, get_type=''):
 
 
 def get_table(type_code):
-    r = {'datetime': [], 'value': []}
+    r = {'chart_name': type_code, 'datetime': [], 'value': []}
     s = []
     match type_code:
         case 'avg_air_hum':
