@@ -85,8 +85,7 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .2s;
-  transition: .2s;
+  overflow: hidden;
 }
 
 .slider:before {
