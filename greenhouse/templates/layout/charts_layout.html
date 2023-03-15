@@ -11,9 +11,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 <div id="charts-engine">
   <div class="container">
-    <canvas id="chart" width="1100" height="500"></canvas>
+    <canvas id="chart" width="1100" height="500" style="position: absolute;"></canvas>
   </div>
   <script>
+    document.querySelector(`canvas#${}`)
+
+    var se
+
     var colors = ['rgba(54,162,235,1)', 'rgba(255,101,134,1)', 'rgba(255,205,86,1)', 'rgba(153,102,255,1)', 'rgba(255,159,64,1)', 'rgba(75,192,192,1)'];
     var currentColor = -1;
     function getNextColor() {

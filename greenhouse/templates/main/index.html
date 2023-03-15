@@ -20,6 +20,7 @@
     });
   });
 </script>
+
 <div class="panel__block-content">
 
   <!-- Soil humidity -->
@@ -207,6 +208,7 @@
 {% block charts-panel %}
 <div class="tab-information">
   <h1 class="tab-information__heading">Графики</h1>
+  <!--
   <select class="select-chart" title="Выбор графика" id="select-chart" onchange="fun1()">
     <option class="select-chart__option" value="temp">Температура</option>
     <option class="select-chart__option" value="avg_temp">Средняя температура</option>
@@ -216,6 +218,7 @@
     <option class="select-chart__option" value="window_chart">Состояние форточек</option>
     <option class="select-chart__option" value="watering_chart">Состояние полива</option>
   </select>
+  -->
 </div>
 
 <div class="panel__block-content">
@@ -223,7 +226,27 @@
   <!-- Chart -->
   <div class="block block_content_chart">
     <div class="block-top">
-      <div id="chart__block-htmx" hx-get="/utility/charts/temp" hx-trigger="load, every 10s"></div>
+      <div class="chart-block">
+        <div id="temp"></div>
+      </div>
+      <div class="chart-block">
+        <div id="avg_temp"></div>
+      </div>
+      <div class="chart-block">
+        <div id="air_hum"></div>
+      </div>
+      <div class="chart-block">
+        <div id="avg_air_hum"></div>
+      </div>
+      <div class="chart-block">
+        <div id="soil_hum"></div>
+      </div>
+      <div class="chart-block">
+        <div id="fork_drive"></div>
+      </div>
+      <div class="chart-block">
+        <div id="watering"></div>
+      </div>
     </div>
   </div>
 

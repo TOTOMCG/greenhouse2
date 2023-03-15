@@ -99,18 +99,27 @@
     <div hx-get="/utility/values/air_hum/2/" hx-trigger="load, every 10s" hx-target="#air-hum__2"></div>
     <div hx-get="/utility/values/air_hum/3/" hx-trigger="load, every 10s" hx-target="#air-hum__3"></div>
     <div hx-get="/utility/values/air_hum/4/" hx-trigger="load, every 10s" hx-target="#air-hum__4"></div>
+    <div hx-get="/utility/charts/temp" hx-target="#temp" hx-trigger="load, every 10s"></div>
+    <div hx-get="/utility/values/air_hum/4/" hx-target="#avg_temp" hx-trigger="load, every 10s"></div>
+    <div hx-get="/utility/charts/air_hum" hx-target="#air_hum" hx-trigger="load, every 10s"></div>
+    <div hx-get="/utility/values/air_hum/4/" hx-target="#avg_air_hum" hx-trigger="load, every 10s"></div>
+    <div hx-get="/utility/values/air_hum/4/" hx-target="#soil_hum" hx-trigger="load, every 10s"></div>
+    <div hx-get="/utility/values/air_hum/4/" hx-target="#fork_drive" hx-trigger="load, every 10s"></div>
+    <div hx-get="/utility/values/air_hum/4/" hx-target="#watering" hx-trigger="load, every 10s"></div>
   </div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/htmx.org@1.8.6"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
   <script defer>
+    /*
     function fun1() {
       var sel = document.getElementById('select-chart').selectedIndex;
       var options=document.getElementById('select-chart').options;
       document.getElementById('chart__block-htmx').setAttribute("hx-get", `/utility/charts/${options[sel].value}`);
       location.reload();
     }
+    */
 
     document.getElementById('control-panel__button').click();
 
