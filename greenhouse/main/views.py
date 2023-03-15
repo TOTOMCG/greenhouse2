@@ -1,15 +1,14 @@
 from django.shortcuts import render
-from utility import dbhelper
+from utility import dbhelper, http_request
 
-from django.utils import timezone
 
 
 # Return main .html template
 def returnmain(request):
     if request.method == 'POST':
         if request.POST.get('type') == 'checkbox':
-            dbhelper.add(request.POST.get('name'), 0, timezone.localtime(),
-                         1 if request.POST.get('value') == 'true' else 0)
+            s = request.POST.get('name').split('-')
+            http_request.patch(s[0],s[1],1 if request.POST.get('value') == 'true' else 0)
         else:
             dbhelper.update_setting('frequency', request.POST.get('frequency'))
             dbhelper.update_setting('min_temp', request.POST.get('min_temp'))
