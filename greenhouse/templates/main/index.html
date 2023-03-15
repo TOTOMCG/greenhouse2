@@ -36,7 +36,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-1">
+                <input class="checkbox" type="checkbox" name="watering-1"{% if watering_1 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -49,7 +49,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-2">
+                <input class="checkbox" type="checkbox" name="watering-2"{% if watering_2 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -62,7 +62,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-3">
+                <input class="checkbox" type="checkbox" name="watering-3"{% if watering_3 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -75,7 +75,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-4">
+                <input class="checkbox" type="checkbox" name="watering-4"{% if watering_4 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -88,7 +88,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-5">
+                <input class="checkbox" type="checkbox" name="watering-5"{% if watering_5 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -101,7 +101,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-6">
+                <input class="checkbox" type="checkbox" name="watering-6"{% if watering_6 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -148,7 +148,7 @@
         <h2 class="block__name">Увлажнение воздуха</h2>
         <div class="switcher-block">
           <label class="switch">
-            <input class="checkbox" type="checkbox" name="total_hum-1">
+            <input class="checkbox" type="checkbox" name="total_hum-1"{% if total_hum_1 %} checked{% endif %}>
             <span class="slider round"></span>
           </label>
         </div>
@@ -192,7 +192,7 @@
         <h2 class="block__name">Проветривание</h2>
         <div class="switcher-block">
           <label class="switch">
-            <input class="checkbox" type="checkbox" name="fork_drive-1">
+            <input class="checkbox" type="checkbox" name="fork_drive-1"{% if fork_drive_1 %} checked{% endif %}>
             <span class="slider round"></span>
           </label>
         </div>
@@ -291,7 +291,7 @@
             </div>
           </li>
           <li class="block__line">
-            <input class="save-button" type="submit" value="Сохранить" action=""/>
+            <input class="save-button" type="submit" value="Сохранить"/>
           </li>
         </ul>
       </div>
