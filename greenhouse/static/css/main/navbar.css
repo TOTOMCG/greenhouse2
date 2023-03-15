@@ -16,7 +16,7 @@
   margin-top: 10px;
   background-color: white;
   border: none;
-  background-image: url('../../img/logo/logo.svg');
+  background-image: url("../../img/logo/logo.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -54,7 +54,7 @@
 }
 
 .navbar__tab-button_content_charts {
-  background-image: url('../../img/icons/chart.svg');
+  background-image: url("../../img/icons/chart.svg");
   background-size: 28px 28px;
   background-repeat: no-repeat;
   background-position: center;

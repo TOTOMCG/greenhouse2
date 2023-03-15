@@ -74,7 +74,7 @@
 
 .block__average-value__text {
   font-weight: normal;
-  line-height: .9;
+  line-height: 0.9;
   font-size: 18px;
   margin: 0;
   padding: 0;
@@ -82,7 +82,7 @@
 
 .block__average-value__meaning {
   font-weight: normal;
-  line-height: .9;
+  line-height: 0.9;
   font-size: 18px;
   margin: 0;
   padding: 0;
@@ -92,7 +92,7 @@
   width: 500px;
 }
 
-.block__list{
+.block__list {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -114,7 +114,7 @@
   padding: 0;
   margin: 0;
   font-weight: normal;
-  line-height: .9;
+  line-height: 0.9;
   font-size: 18px;
   min-width: 110px;
 }
@@ -148,31 +148,31 @@
 }
 
 .block__icon_place_soil-humidity {
-  background-image: url('../../img/icons/soil_hum.svg');
+  background-image: url("../../img/icons/soil_hum.svg");
 }
 
 .block__icon_place_air-humidity {
-  background-image: url('../../img/icons/air_hum.svg');
+  background-image: url("../../img/icons/air_hum.svg");
 }
 
 .block__icon_place_watering {
-  background-image: url('../../img/icons/watering.svg');
+  background-image: url("../../img/icons/watering.svg");
 }
 
 .block__icon_place_temperature {
-  background-image: url('../../img/icons/temp.svg');
+  background-image: url("../../img/icons/temp.svg");
 }
 
 .block__icon_place_wind {
-  background-image: url('../../img/icons/wind.svg');
+  background-image: url("../../img/icons/wind.svg");
 }
 
 .block__icon_place_chart {
-  background-image: url('../../img/icons/chart.svg');
+  background-image: url("../../img/icons/chart.svg");
 }
 
 .block__icon_place_settings {
-  background-image: url('../../img/icons/settings.svg');
+  background-image: url("../../img/icons/settings.svg");
 }
 
 .select-list {
@@ -205,7 +205,7 @@
 }
 
 .save-button:hover {
-  background-color: #0065CE
+  background-color: #0065ce;
 }
 
 .chart-block {
