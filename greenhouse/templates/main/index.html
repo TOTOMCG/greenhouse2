@@ -12,9 +12,12 @@
   <!-- Soil humidity -->
   <div class="block">
     <div class="block-top">
-      <div class="block-top__header">
-        <div class="block__icon block__icon_place_soil-humidity"></div>
-        <h2 class="block__name">Влажность почвы %</h2>
+      <div class="block-top__header block-top__header_place_between">
+        <div class="line__first-block">
+          <div class="block__icon block__icon_place_soil-humidity"></div>
+          <h2 class="block__name">Влажность почвы</h2>
+        </div>
+        <h2 class="block__name">%</h2>
       </div>
       <ul class="block__list">
         <li class="block__line">
@@ -104,9 +107,12 @@
   <!-- Air humidity  -->
   <div class="block">
     <div class="block-top">
-      <div class="block-top__header">
-        <div class="block__icon block__icon_place_air-humidity"></div>
-        <h2 class="block__name">Влажность воздуха %</h2>
+      <div class="block-top__header block-top__header_place_between">
+        <div class="line__first-block">
+          <div class="block__icon block__icon_place_air-humidity"></div>
+          <h2 class="block__name">Влажность воздуха</h2>
+        </div>
+        <h2 class="block__name">%</h2>
       </div>
       <div class="block__average-value">
         <p class="block__average-value__text">Среднее значение:</p>
@@ -132,9 +138,11 @@
       </ul>
     </div>
     <div class="block-bottom">
-      <div class="block-bottom__header">
-        <div class="block__icon  block__icon_place_watering"></div>
-        <h2 class="block__name">Увлажнение воздуха</h2>
+      <div class="block-bottom__header block-bottom__header_place_watering">
+        <div class="line__first-block">
+          <div class="block__icon  block__icon_place_watering"></div>
+          <h2 class="block__name">Увлажнение воздуха</h2>
+        </div>
         <div class="switcher-block">
           <label class="switch">
             <input class="checkbox" type="checkbox" name="total_hum-1"  {% if total_hum_1 %} checked{% endif %}>
@@ -148,9 +156,12 @@
   <!-- Temperature -->
   <div class="block">
     <div class="block-top">
-      <div class="block-top__header">
-        <div class="block__icon block__icon_place_temperature"></div>
-        <h2 class="block__name">Температура &deg;С</h2>
+      <div class="block-top__header block-top__header_place_between">
+        <div class="line__first-block">
+          <div class="block__icon block__icon_place_temperature"></div>
+          <h2 class="block__name">Температура</h2>
+        </div>
+        <h2 class="block__name">&deg;С</h2>
       </div>
       <div class="block__average-value">
         <p class="block__average-value__text">Среднее значение:</p>
@@ -176,9 +187,29 @@
       </ul>
     </div>
     <div class="block-bottom">
-      <div class="block-bottom__header">
-        <div class="block__icon block__icon_place_wind"></div>
-        <h2 class="block__name">Проветривание</h2>
+      <div class="block-bottom__header block-bottom__header_place_wind">
+        <div class="line__first-block">
+          <div class="block__icon block__icon_place_wind"></div>
+          <h2 class="block__name">Проветривание</h2>
+        </div>
+        <div class="switcher-block">
+          <label class="switch">
+            <input class="checkbox" type="checkbox" name="fork_drive-1"  {% if fork_drive_1 %} checked{% endif %}>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Emergency mode -->
+  <div class="block">
+    <div class="block-bottom">
+      <div class="block-bottom__header block-bottom__header_place_wind">
+        <div class="line__first-block">
+          <div class="block__icon block__icon_place_wind"></div>
+          <h2 class="block__name">Проветривание</h2>
+        </div>
         <div class="switcher-block">
           <label class="switch">
             <input class="checkbox" type="checkbox" name="fork_drive-1"  {% if fork_drive_1 %} checked{% endif %}>

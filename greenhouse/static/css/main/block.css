@@ -220,3 +220,8 @@
   height: 500px;
 }
 
+.block-bottom__header_place_watering,
+.block-bottom__header_place_wind,
+.block-top__header_place_between {
+  justify-content: space-between;
+}
