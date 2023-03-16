@@ -280,13 +280,105 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/htmx.org@1.8.6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-    <script defer>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.checkbox').change(function() {
+          $.post("/main/", {
+            type: 'checkbox',
+            name: this.name,
+            value: this.checked,
+            csrfmiddlewaretoken: '{{ csrf_token }}'
+          });
+        });
+      });
 
-    function fun1() {
-      var sel = document.getElementById('select-chart').selectedIndex;
-      var options=document.getElementById('select-chart').options;
-      document.getElementById(`${option[sel].value}`).style.visibility = `/utility/charts/${options[sel].value}`;
-    }
+    </script>
+    <script>
+      function is_disabled(name,rcmnd_value){
+        if (document.getElementById(name).innerHTML<rcmnd_value){
+          alert(1);
+        }else{
+          alert(0);
+        }
+      }
+    </script>
+    <script defer>
+      $('#avg_temp_chart').css('display','none');
+      $('#air_hum_chart').css('display','none');
+      $('#avg_air_hum_chart').css('display','none');
+      $('#soil_hum_chart').css('display','none');
+      $('#fork_drive_chart').css('display','none');
+      $('#watering_chart').css('display','none');
+
+      $(document).ready(function() {
+        $('select[name="chartselect"]').change(function() {
+          var el = $(this).val();
+          if (el==1) {
+            $('#temp_chart').css('display','block');
+            $('#avg_temp_chart').css('display','none');
+            $('#air_hum_chart').css('display','none');
+            $('#avg_air_hum_chart').css('display','none');
+            $('#soil_hum_chart').css('display','none');
+            $('#fork_drive_chart').css('display','none');
+            $('#watering_chart').css('display','none');
+              };
+            if (el==2) {
+              $('#temp_chart').css('display','none');
+              $('#avg_temp_chart').css('display','block');
+              $('#air_hum_chart').css('display','none');
+              $('#avg_air_hum_chart').css('display','none');
+              $('#soil_hum_chart').css('display','none');
+              $('#fork_drive_chart').css('display','none');
+              $('#watering_chart').css('display','none');
+            };
+            if (el==3) {
+              $('#temp_chart').css('display','none');
+              $('#avg_temp_chart').css('display','none');
+              $('#air_hum_chart').css('display','block');
+              $('#avg_air_hum_chart').css('display','none');
+              $('#soil_hum_chart').css('display','none');
+              $('#fork_drive_chart').css('display','none');
+              $('#watering_chart').css('display','none');
+            };
+            if (el==4) {
+              $('#temp_chart').css('display','none');
+              $('#avg_temp_chart').css('display','none');
+              $('#air_hum_chart').css('display','none');
+              $('#avg_air_hum_chart').css('display','block');
+              $('#soil_hum_chart').css('display','none');
+              $('#fork_drive_chart').css('display','none');
+              $('#watering_chart').css('display','none');
+            };
+            if (el==5) {
+              $('#temp_chart').css('display','none');
+              $('#avg_temp_chart').css('display','none');
+              $('#air_hum_chart').css('display','none');
+              $('#avg_air_hum_chart').css('display','none');
+              $('#soil_hum_chart').css('display','block');
+              $('#fork_drive_chart').css('display','none');
+              $('#watering_chart').css('display','none');
+            };
+            if (el==6) {
+              $('#temp_chart').css('display','none');
+              $('#avg_temp_chart').css('display','none');
+              $('#air_hum_chart').css('display','none');
+              $('#avg_air_hum_chart').css('display','none');
+              $('#soil_hum_chart').css('display','none');
+              $('#fork_drive_chart').css('display','block');
+              $('#watering_chart').css('display','none');
+            };
+            if (el==7) {
+              $('#temp_chart').css('display','none');
+              $('#avg_temp_chart').css('display','none');
+              $('#air_hum_chart').css('display','none');
+              $('#avg_air_hum_chart').css('display','none');
+              $('#soil_hum_chart').css('display','none');
+              $('#fork_drive_chart').css('display','none');
+              $('#watering_chart').css('display','block');
+            }
+          });
+      });
 
       document.getElementById("control-panel__button").click();
 
@@ -295,14 +387,10 @@
         document.getElementById("charts-panel").style.visibility = "hidden";
         document.getElementById("setting-panel").style.visibility = "hidden";
         document.getElementById("database-panel").style.visibility = "hidden";
-        document.getElementById("control-panel__button").style.background =
-          "#f0f0f0";
-        document.getElementById("charts-panel__button").style.background =
-          "white";
-        document.getElementById("database-panel__button").style.background =
-          "white";
-        document.getElementById("setting-panel__button").style.background =
-          "white";
+        document.getElementById("control-panel__button").style.background = "#f0f0f0";
+        document.getElementById("charts-panel__button").style.background = "white";
+        document.getElementById("database-panel__button").style.background = "white";
+        document.getElementById("setting-panel__button").style.background = "white";
         document.getElementById("control-panel").style.position = "absolute";
         document.getElementById("setting-panel").style.position = "absolute";
         document.getElementById("database-panel").style.position = "absolute";

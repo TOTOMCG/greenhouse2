@@ -208,10 +208,14 @@
   background-color: #0065ce;
 }
 
-.chart-block {
-  display: flex;
+.block-top_place_charts {
   position: relative;
+  height: 520px;
+}
+
+.chart-block {
+  position: absolute;
   width: 1100px;
   height: 500px;
-  border: 1px solid red;
 }
+

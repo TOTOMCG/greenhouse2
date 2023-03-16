@@ -7,33 +7,6 @@
   <h1 class="tab-information__heading">Панель управления</h1>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!-- Import Jquery Here-->
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('.checkbox').change(function() {
-      $.post("/main/", {
-        type: 'checkbox',
-        name: this.name,
-        value: this.checked,
-        csrfmiddlewaretoken: '{{ csrf_token }}'
-      });
-    });
-  });
-
-
-</script>
-<script>
-  function is_disabled(name,rcmnd_value){
-    if (document.getElementById(name).innerHTML<rcmnd_value){
-      alert(1);
-    }else{
-      alert(0);
-    }
-  }
-
-
-</script>
-
 <div class="panel__block-content">
 
   <!-- Soil humidity -->
@@ -222,22 +195,20 @@
 {% block charts-panel %}
 <div class="tab-information">
   <h1 class="tab-information__heading">Графики</h1>
-  <select class="select-chart" title="Выбор графика" id="select-chart" onchange="fun1()">
-    <option class="select-chart__option" value="temp">Температура</option>
-    <option class="select-chart__option" value="avg_temp">Средняя температура</option>
-    <option class="select-chart__option" value="air_hum">Влажность воздуха</option>
-    <option class="select-chart__option" value="avg_air_hum">Средняя влажность воздуха</option>
-    <option class="select-chart__option" value="soil_hum">Влажность почвы</option>
-    <option class="select-chart__option" value="window_chart">Состояние форточек</option>
-    <option class="select-chart__option" value="watering_chart">Состояние полива</option>
+  <select class="select-chart" name="chartselect" title="Выбор графика" id="select-chart">
+    <option class="select-chart__option" value="1" id="temp-selected_value" selected>Температура</option>
+    <option class="select-chart__option" value="2">Средняя температура</option>
+    <option class="select-chart__option" value="3">Влажность воздуха</option>
+    <option class="select-chart__option" value="4">Средняя влажность воздуха</option>
+    <option class="select-chart__option" value="5">Влажность почвы</option>
+    <option class="select-chart__option" value="6">Состояние форточек</option>
+    <option class="select-chart__option" value="7">Состояние полива</option>
   </select>
 </div>
 
 <div class="panel__block-content">
-
-  <!-- Chart -->
   <div class="block block_content_chart">
-    <div class="block-top">
+    <div class="block-top block-top_place_charts">
       <div class="chart-block">
         <div id="temp_chart"></div>
       </div>
@@ -261,7 +232,6 @@
       </div>
     </div>
   </div>
-
 </div>
 {% endblock charts-panel %}
 
