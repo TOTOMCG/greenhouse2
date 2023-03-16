@@ -310,6 +310,11 @@
         hx-trigger="load, every 10s"
         hx-target="#watering_chart"
       ></div>
+      <div
+        hx-get="/utility/charts/total_hum"
+        hx-trigger="load, every 10s"
+        hx-target="#total_hum_chart"
+      ></div>
     </div>
 
     <!-- Scripts -->
@@ -345,6 +350,7 @@
       $('#soil_hum_chart').css('display','none');
       $('#fork_drive_chart').css('display','none');
       $('#watering_chart').css('display','none');
+      $('#total_hum_chart').css('display','none');
 
       $(document).ready(function() {
         $('select[name="chartselect"]').change(function() {
@@ -357,6 +363,7 @@
             $('#soil_hum_chart').css('display','none');
             $('#fork_drive_chart').css('display','none');
             $('#watering_chart').css('display','none');
+            $('#total_hum_chart').css('display','none');
               };
             if (el==2) {
               $('#temp_chart').css('display','none');
@@ -366,6 +373,7 @@
               $('#soil_hum_chart').css('display','none');
               $('#fork_drive_chart').css('display','none');
               $('#watering_chart').css('display','none');
+              $('#total_hum_chart').css('display','none');
             };
             if (el==3) {
               $('#temp_chart').css('display','none');
@@ -375,6 +383,7 @@
               $('#soil_hum_chart').css('display','none');
               $('#fork_drive_chart').css('display','none');
               $('#watering_chart').css('display','none');
+              $('#total_hum_chart').css('display','none');
             };
             if (el==4) {
               $('#temp_chart').css('display','none');
@@ -384,6 +393,7 @@
               $('#soil_hum_chart').css('display','none');
               $('#fork_drive_chart').css('display','none');
               $('#watering_chart').css('display','none');
+              $('#total_hum_chart').css('display','none');
             };
             if (el==5) {
               $('#temp_chart').css('display','none');
@@ -393,6 +403,7 @@
               $('#soil_hum_chart').css('display','block');
               $('#fork_drive_chart').css('display','none');
               $('#watering_chart').css('display','none');
+              $('#total_hum_chart').css('display','none');
             };
             if (el==6) {
               $('#temp_chart').css('display','none');
@@ -402,6 +413,7 @@
               $('#soil_hum_chart').css('display','none');
               $('#fork_drive_chart').css('display','block');
               $('#watering_chart').css('display','none');
+              $('#total_hum_chart').css('display','none');
             };
             if (el==7) {
               $('#temp_chart').css('display','none');
@@ -411,7 +423,18 @@
               $('#soil_hum_chart').css('display','none');
               $('#fork_drive_chart').css('display','none');
               $('#watering_chart').css('display','block');
-            }
+              $('#total_hum_chart').css('display','none');
+            };
+            if (el==8) {
+              $('#temp_chart').css('display','none');
+              $('#avg_temp_chart').css('display','none');
+              $('#air_hum_chart').css('display','none');
+              $('#avg_air_hum_chart').css('display','none');
+              $('#soil_hum_chart').css('display','none');
+              $('#fork_drive_chart').css('display','none');
+              $('#watering_chart').css('display','none');
+              $('#total_hum_chart').css('display','block');
+            };
           });
       });
 

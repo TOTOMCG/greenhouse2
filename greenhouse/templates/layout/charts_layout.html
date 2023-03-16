@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-  <canvas id={{chart_name}} width="1100" height="500" style="position: absolute;"></canvas>
-  <script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+<canvas id={{chart_name}} width="1100" height="500" style="position: absolute;"></canvas>
+<script>
     var colors = ['rgba(54,162,235,1)', 'rgba(255,101,134,1)', 'rgba(255,205,86,1)', 'rgba(153,102,255,1)', 'rgba(255,159,64,1)', 'rgba(75,192,192,1)'];
     var currentColor = -1;
     function getNextColor() {
@@ -24,6 +24,7 @@
         datasets: [
           {% for i in value %}
               {data: {{ i }},
+              label: currentColor+2,
               fill: false,
               backgroundColor: getNextColor(),
               borderColor: colors[currentColor],
@@ -38,7 +39,11 @@
         animation: false,
         responsive: false,
         legend: {
-          display: false
+          {% if value|length > 1 %}
+            display: true
+          {% else %}
+            display: false
+          {% endif %}
         },
         title: {
           display: false,
@@ -56,6 +61,7 @@
     });
 
 
-  </script>
+
+</script>
 </body>
 </html>

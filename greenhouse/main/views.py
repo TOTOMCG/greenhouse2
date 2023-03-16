@@ -7,6 +7,7 @@ def returnmain(request):
     if request.method == 'POST':
         if request.POST.get('type') == 'checkbox':
             s = request.POST.get('name').split('-')
+            print(request.POST.get('value'))
             http_request.patch(s[0], s[1], 1 if request.POST.get('value') == 'true' else 0)
         else:
             dbhelper.update_setting('frequency', request.POST.get('frequency'))

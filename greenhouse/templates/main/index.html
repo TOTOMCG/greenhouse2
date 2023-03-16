@@ -27,7 +27,6 @@
             <div class="switcher-block">
               <label class="switch">
                 <input class="checkbox" type="checkbox" onchange="is_disabled('soil-hum__1',{{max_soil_hum}})"
-                       onchange="is_disabled('soil-hum__1',{{max_soil_hum}})"
                        name="watering-1"  {% if watering_1 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
@@ -235,6 +234,7 @@
     <option class="select-chart__option" value="5">Влажность почвы</option>
     <option class="select-chart__option" value="6">Состояние форточек</option>
     <option class="select-chart__option" value="7">Состояние полива</option>
+    <option class="select-chart__option" value="8">Состояние увлажнения теплицы</option>
   </select>
 </div>
 
@@ -262,6 +262,9 @@
       <div class="chart-block">
         <div id="watering_chart"></div>
       </div>
+      <div class="chart-block">
+        <div id="total_hum_chart"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -270,7 +273,7 @@
 <!-- Database panel -->
 {% block database-panel %}
 <div class="tab-information">
-  <h1 class="tab-information__heading">База данных</h1>
+  <h1 class="tab-information__heading">Таблица</h1>
 </div>
 {% endblock database-panel %}
 
