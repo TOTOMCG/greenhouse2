@@ -30,7 +30,7 @@ def get_last(type_code, device_id=0, get_type=''):
 
 
 def get_table(type_code):
-    r = {'chart_name': type_code, 'datetime': [], 'value': []}
+    r = {'chart_name': type_code, 'chart_type': 'false', 'datetime': [], 'value': []}
     s = []
     match type_code:
         case 'avg_air_hum':
@@ -49,10 +49,13 @@ def get_table(type_code):
         case 'watering':
             for i in range(1, 7):
                 s.append(get(type_code='watering', device_id=i))
+            r['chart_type'] = 'true'
         case 'fork_drive':
             s.append(get(type_code='fork_drive', device_id=1))
+            r['chart_type'] = 'true'
         case 'total_hum':
             s.append(get(type_code='total_hum', device_id=1))
+            r['chart_type'] = 'true'
     for i in range(len(s)):
         a = []
         for c in s[i]:
