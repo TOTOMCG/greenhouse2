@@ -13,3 +13,6 @@ def returnvalue(request, type, id):
 
 def returnchart(request, type):
     return render(request, 'layout/charts_layout.html', context=dbhelper.get_table(type))
+
+def returntable(request):
+    return render(request, 'layout/table.html')

@@ -54,10 +54,14 @@
 
 .block__name {
   padding: 0;
-  margin: 0 10px;
-  line-height: 1.05;
-  font-size: 20px;
+  margin-left: 5px;
+  margin-bottom: 0;
+  margin-top: 2px;
+  font-size: 21px;
   font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
 }
 
 .block__average-value {

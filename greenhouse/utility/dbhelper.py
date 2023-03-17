@@ -67,7 +67,7 @@ def get_table(type_code):
 
 
 def get_setting(name):
-    return Settings.objects.get(name=name)
+    return Settings.objects.get_or_create(name=name)[0]
 
 
 def update_setting(name, value):
