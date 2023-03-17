@@ -271,9 +271,14 @@
 
 <!-- Database panel -->
 {% block database-panel %}
-<div class="tab-information">
-  <h1 class="tab-information__heading">Таблица</h1>
-</div>
+  <div class="tab-information">
+    <h1 class="tab-information__heading">Таблица</h1>
+  </div>
+  <div class="panel__block-content">
+    <div class="block">
+      <div id="database_htmx-module"></div>
+    </div>
+  </div>
 {% endblock database-panel %}
 
 <!-- Settings panel -->

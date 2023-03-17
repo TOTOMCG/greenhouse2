@@ -270,6 +270,11 @@
         hx-trigger="load, every 10s"
         hx-target="#total_hum_chart"
       ></div>
+      <div
+        hx-get="/utility/values/air_hum/1"
+        hx-trigger="load, every 10s"
+        hx-target="#database_htmx-module">
+      </div>
     </div>
 
     <!-- Scripts -->
