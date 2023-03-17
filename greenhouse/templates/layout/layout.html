@@ -427,8 +427,10 @@
 
     </script>
     <script>
-      function is_disabled(name,rcmnd_value){
-        if (document.getElementById(name).innerHTML<rcmnd_value){
+      function is_disabled(id,rcmnd_value){
+        alert(document.getElementById(id).innerHTML);
+        alert(rcmnd_value);
+        if (document.getElementById(id).innerHTML<rcmnd_value){
           alert(1);
         }else{
           alert(0);
