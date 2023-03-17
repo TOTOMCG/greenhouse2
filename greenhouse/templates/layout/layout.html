@@ -339,7 +339,12 @@
           success: function(data){
             console.log(data);
             document.getElementById("air-hum__avg").innerHTML = data;
+            if (data < {{max_air_hum}}) {
+              document.getElementById("watering_all_checkbox").setAttribute('disabled', 'disabled');
+
+            };
           }
+
         });
         $.ajax({
           url:'/utility/values/air_hum/1',
@@ -383,11 +388,7 @@
             console.log(data);
             document.getElementById("temp__avg").innerHTML = data;
             if (data < {{min_temp}}) {
-              document.getElementById("soil_hum_checkbox").setAttribute('disabled', 'disabled');
-
-              if (document.getElementById("emergency_mod_checkbox").onclick == true) {
-                alert('gg')
-              }
+              document.getElementById("fork_drive_checkbox").setAttribute('disabled', 'disabled');
 
             };
           }
