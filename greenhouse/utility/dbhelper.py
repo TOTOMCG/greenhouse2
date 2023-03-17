@@ -72,35 +72,47 @@ def get_chart(type_code):
     return r
 
 
+def safe_list_get(a, x):
+    try:
+        return a[x]
+    except IndexError:
+        return ['']
+
+
 def get_table():
     r = []
+    max_len = []
     dtms = [get('temp', device_id=1).values_list('datetime')]
     for i in range(4):
-        dtms.append(get('temp', device_id=i + 1).values_list('value'))
+        s = get('temp', device_id=i + 1).values_list('value')
+        dtms.append(s)
+        max_len.append(len(s))
     for i in range(4):
-        dtms.append(get('air_hum', device_id=i + 1).values_list('value'))
+        s = get('air_hum', device_id=i + 1).values_list('value')
+        dtms.append(s)
+        max_len.append(len(s))
     for i in range(6):
-        dtms.append(get('soil_hum', device_id=i + 1).values_list('value'))
-    print(len(dtms))
-    for i in range(len(dtms[0])):
+        s = get('soil_hum', device_id=i + 1).values_list('value')
+        dtms.append(s)
+        max_len.append(len(s))
+    for i in range(max(max_len)):
         r.append({
-            'Время': dtms[0][i][0].strftime("%Y-%m-%d %H:%M:%S"),
-            'Температура 1': dtms[1][i][0],
-            'Температура 2': dtms[2][i][0],
-            'Температура 3': dtms[3][i][0],
-            'Температура 4': dtms[4][i][0],
-            'Влажность воздуха 1': dtms[5][i][0],
-            'Влажность воздуха 2': dtms[6][i][0],
-            'Влажность воздуха 3': dtms[7][i][0],
-            'Влажность воздуха 4': dtms[8][i][0],
-            'Влажность почвы 1': dtms[9][i][0],
-            'Влажность почвы 2': dtms[10][i][0],
-            'Влажность почвы 3': dtms[11][i][0],
-            'Влажность почвы 4': dtms[12][i][0],
-            'Влажность почвы 5': dtms[13][i][0],
-            'Влажность почвы 6': dtms[14][i][0]
+            'Время': dtms[max_len.index(max(max_len))][i][0].strftime("%Y-%m-%d %H:%M:%S"),
+            'Температура 1': safe_list_get(dtms[1], i)[0],
+            'Температура 2': safe_list_get(dtms[2], i)[0],
+            'Температура 3': safe_list_get(dtms[3], i)[0],
+            'Температура 4': safe_list_get(dtms[4], i)[0],
+            'Влажность воздуха 1': safe_list_get(dtms[5], i)[0],
+            'Влажность воздуха 2': safe_list_get(dtms[6], i)[0],
+            'Влажность воздуха 3': safe_list_get(dtms[7], i)[0],
+            'Влажность воздуха 4': safe_list_get(dtms[8], i)[0],
+            'Влажность почвы 1': safe_list_get(dtms[9], i)[0],
+            'Влажность почвы 2': safe_list_get(dtms[10], i)[0],
+            'Влажность почвы 3': safe_list_get(dtms[11], i)[0],
+            'Влажность почвы 4': safe_list_get(dtms[12], i)[0],
+            'Влажность почвы 5': safe_list_get(dtms[13], i)[0],
+            'Влажность почвы 6': safe_list_get(dtms[14], i)[0]
         })
-    print(r)
     return {'data': r}
 
 

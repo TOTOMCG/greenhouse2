@@ -1,23 +1,11 @@
 {% load static %}
 <link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/static/table.css">
 <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.4.4/dist/js/tabulator.min.js"></script>
 <div id='test'></div>
 <script>
     var table = new Tabulator("#test", {
         data: {{data|safe}},
-        resizableColumnFit:false,
         autoColumns: true,
         height: 750,
-        layout:"fitColumns",
-        columns:[
-            {title:"ID", field:"id"},
-            {title:"Время", field:"time"},
-            {title:"Температура", field:"temperature"},
-            {title:"Влажность воздуха", field:"humidity_air"},
-            {title:"Влажность почвы", field:"humidity{_earth"},
-            {title:"Состояние форточек", field:"window_pane"},
-            {title:"Состояние полива", field:"watering"},
- 	    ],
     });
 </script>
