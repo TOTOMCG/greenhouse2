@@ -271,7 +271,7 @@
         hx-target="#total_hum_chart"
       ></div>
       <div
-        hx-get="/utility/values/air_hum/1"
+        hx-get="/utility/table"
         hx-trigger="load, every 10s"
         hx-target="#database_htmx-module">
       </div>
@@ -431,7 +431,7 @@
           }
         });
       }
-      setInterval('ajax_data()', 1000);
+      setInterval('ajax_data()', 10000);
 
 
       $(document).ready(function() {
