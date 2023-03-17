@@ -382,6 +382,14 @@
           success: function(data){
             console.log(data);
             document.getElementById("temp__avg").innerHTML = data;
+            if (data < {{min_temp}}) {
+              document.getElementById("soil_hum_checkbox").setAttribute('disabled', 'disabled');
+
+              if (document.getElementById("emergency_mod_checkbox").onclick == true) {
+                alert('gg')
+              }
+
+            };
           }
         });
         $.ajax({
