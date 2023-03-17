@@ -148,7 +148,7 @@
     </main>
 
     <!-- HTMX-element reboot & redirect helper -->
-    <div class="htmx">
+    <!-- <div class="htmx">
       <div
         hx-get="/utility/values/temp/avg/"
         hx-trigger="load, every 10s"
@@ -174,7 +174,7 @@
         hx-trigger="load, every 10s"
         hx-target="#temp__4"
       ></div>
-      <div
+     <div
         hx-get="/utility/values/soil_hum/1/"
         hx-trigger="load, every 10s"
         hx-target="#soil-hum__1"
@@ -269,13 +269,151 @@
         hx-trigger="load, every 10s"
         hx-target="#total_hum_chart"
       ></div>
-    </div>
+    </div> -->
 
     <!-- Scripts -->
     <script src="https://unpkg.com/htmx.org@1.8.6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
+      function ajax_data(){
+        /* Soil_hum */
+        $.ajax({
+          url:'/utility/values/soil_hum/1',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("soil-hum__1").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/soil_hum/2',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("soil-hum__2").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/soil_hum/3',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("soil-hum__3").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/soil_hum/4',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("soil-hum__4").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/soil_hum/5',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("soil-hum__5").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/soil_hum/6',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("soil-hum__6").innerHTML = data;
+          }
+        });
+
+        /* Air_hum */
+        $.ajax({
+          url:'/utility/values/air_hum/avg',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("air-hum__avg").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/air_hum/1',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("air-hum__1").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/air_hum/2',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("air-hum__2").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/soil_hum/3',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("air-hum__3").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/soil_hum/4',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("air-hum__4").innerHTML = data;
+          }
+        });
+
+
+        /* temp */
+        $.ajax({
+          url:'/utility/values/temp/avg',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("temp__avg").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/temp/1',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("temp__1").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/temp/2',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("temp__2").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/temp/3',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("temp__3").innerHTML = data;
+          }
+        });
+        $.ajax({
+          url:'/utility/values/temp/4',
+          type:'GET',
+          success: function(data){
+            console.log(data);
+            document.getElementById("temp__4").innerHTML = data;
+          }
+        });
+      } setInterval('ajax_data()', 1000);
+
+
       $(document).ready(function() {
         $('.checkbox').change(function() {
           $.post("/main/", {
