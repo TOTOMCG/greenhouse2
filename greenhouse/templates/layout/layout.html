@@ -229,6 +229,7 @@
         hx-trigger="load, every 10s"
         hx-target="#air-hum__4"
       ></div>
+      -->
       <div
         hx-get="/utility/charts/temp"
         hx-trigger="load, every 10s"
@@ -269,13 +270,17 @@
         hx-trigger="load, every 10s"
         hx-target="#total_hum_chart"
       ></div>
-    </div> -->
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/htmx.org@1.8.6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
+      $(document).ready(function(){
+        ajax_data();
+      });
+
       function ajax_data(){
         /* Soil_hum */
         $.ajax({
@@ -411,7 +416,8 @@
             document.getElementById("temp__4").innerHTML = data;
           }
         });
-      } setInterval('ajax_data()', 1000);
+      }
+      setInterval('ajax_data()', 1000);
 
 
       $(document).ready(function() {
