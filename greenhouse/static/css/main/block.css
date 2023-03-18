@@ -6,7 +6,7 @@
 }
 
 .block_content_chart {
-  width: 1150px;
+  width: 1120px;
 }
 
 .block-top {
@@ -96,6 +96,14 @@
   width: 500px;
 }
 
+.block_place_table {
+  width: 1260px;
+}
+
+.block_place_plus {
+  width: 350px;
+}
+
 .block__list {
   list-style-type: none;
   padding: 0;
@@ -177,6 +185,12 @@
 
 .block__icon_place_settings {
   background-image: url("../../img/icons/settings.svg");
+}
+.block__icon_place_plus {
+  background-image: url("../../img/icons/plus.svg");
+}
+.block__icon_place_warning {
+  background-image: url("../../img/icons/warning.svg");
 }
 
 .select-list {

@@ -17,14 +17,14 @@ class MapComponent(models.Model):
 
 class AvgRecord(models.Model):
     id = models.AutoField(primary_key=True)
-    datetime = models.DateTimeField()
+    datetime = models.CharField(max_length=19)
     type_id = models.ForeignKey(DimComponentType, on_delete=models.CASCADE)
     value = models.FloatField()
 
 
 class FctRecord(models.Model):
     record_id = models.AutoField(primary_key=True)
-    datetime = models.DateTimeField()
+    datetime = models.CharField(max_length=19)
     component_id = models.ForeignKey(MapComponent, on_delete=models.CASCADE)
     value = models.FloatField()
 

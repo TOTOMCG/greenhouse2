@@ -10,7 +10,8 @@ def get_component_id(type_code, device_id):
 
 
 def add(type_code, device_id, datetime, value):
-    FctRecord.objects.create(component_id=get_component_id(type_code, device_id), datetime=datetime, value=value)
+    FctRecord.objects.update_or_create(component_id=get_component_id(type_code, device_id), datetime=datetime,
+                                       defaults={"value": value})
 
 
 def add_avg(type_code, datetime, value):
@@ -66,7 +67,7 @@ def get_chart(type_code):
         a = []
         for c in s[i]:
             if i == 0:
-                r['datetime'].append(c.datetime.strftime("%Y-%m-%d %H:%M:%S"))
+                r['datetime'].append(c.datetime)
             a.append(c.value)
         r['value'].append(a)
     return r
@@ -81,23 +82,33 @@ def safe_list_get(a, x):
 
 def get_table():
     r = []
-    max_len = []
-    dtms = [get('temp', device_id=1).values_list('datetime')]
+    max_len = 0
+    mmax = []
+    dtms = [0]
     for i in range(4):
         s = get('temp', device_id=i + 1).values_list('value')
         dtms.append(s)
-        max_len.append(len(s))
+        l = get('temp', device_id=i + 1).values_list('datetime')
+        if len(l) > max_len:
+            mmax = l
+            max_len = len(l)
     for i in range(4):
         s = get('air_hum', device_id=i + 1).values_list('value')
         dtms.append(s)
-        max_len.append(len(s))
+        l = get('air_hum', device_id=i + 1).values_list('datetime')
+        if len(l) > max_len:
+            mmax = l
+            max_len = len(l)
     for i in range(6):
         s = get('soil_hum', device_id=i + 1).values_list('value')
         dtms.append(s)
-        max_len.append(len(s))
-    for i in range(max(max_len)):
+        l = get('soil_hum', device_id=i + 1).values_list('datetime')
+        if len(l) > max_len:
+            mmax = l
+            max_len = len(l)
+    for i in range(max_len):
         r.append({
-            'Время': dtms[max_len.index(max(max_len))][i][0].strftime("%Y-%m-%d %H:%M:%S"),
+            'Время': mmax[i][0],
             'Температура 1': safe_list_get(dtms[1], i)[0],
             'Температура 2': safe_list_get(dtms[2], i)[0],
             'Температура 3': safe_list_get(dtms[3], i)[0],

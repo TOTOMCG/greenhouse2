@@ -26,7 +26,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-1" {% if watering_1 %} checked{% endif %}>
+                <input class="checkbox" id="watering_1_checkbox" type="checkbox" name="watering-1" {% if watering_1 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -39,7 +39,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-2" {% if watering_2 %} checked{% endif %}>
+                <input class="checkbox" id="watering_2_checkbox" type="checkbox" name="watering-2" {% if watering_2 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -52,7 +52,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-3" {% if watering_3 %} checked{% endif %}>
+                <input class="checkbox" id="watering_3_checkbox" type="checkbox" name="watering-3" {% if watering_3 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -65,7 +65,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-4" {% if watering_4 %} checked{% endif %}>
+                <input class="checkbox" id="watering_4_checkbox" type="checkbox" name="watering-4" {% if watering_4 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -78,7 +78,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-5" {% if watering_5 %} checked{% endif %}>
+                <input class="checkbox" id="watering_5_checkbox" type="checkbox" name="watering-5" {% if watering_5 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -91,7 +91,7 @@
             <p class="line__watering">Полив:</p>
             <div class="switcher-block">
               <label class="switch">
-                <input class="checkbox" type="checkbox" name="watering-6" {% if watering_6 %} checked{% endif %}>
+                <input class="checkbox" id="watering_6_checkbox" type="checkbox" name="watering-6" {% if watering_6 %} checked{% endif %}>
                 <span class="slider round"></span>
               </label>
             </div>
@@ -103,12 +103,12 @@
     <div class="block-bottom">
       <div class="block-bottom__header block-bottom__header_place_wind">
         <div class="line__first-block">
-          <div class="block__icon block__icon_place_wind"></div>
+          <div class="block__icon block__icon_place_warning"></div>
           <h2 class="block__name">Экстренный режим</h2>
         </div>
         <div class="switcher-block">
           <label class="switch">
-            <input class="checkbox" type="checkbox" name="fork_drive-1">
+            <input class="extra_mode_checkbox" type="checkbox" id="extra_mode_checkbox">
             <span class="slider round"></span>
           </label>
         </div>
@@ -157,7 +157,8 @@
         </div>
         <div class="switcher-block">
           <label class="switch">
-            <input class="checkbox" type="checkbox" name="total_hum-1" {% if total_hum_1 %} checked{% endif %} id="watering_all_checkbox">
+            <input class="checkbox" type="checkbox" name="total_hum-1" {% if total_hum_1 %} checked{% endif %}
+                   id="total_hum_checkbox">
             <span class="slider round"></span>
           </label>
         </div>
@@ -206,7 +207,8 @@
         </div>
         <div class="switcher-block">
           <label class="switch">
-            <input class="checkbox" type="checkbox" name="fork_drive-1" {% if fork_drive_1 %} checked{% endif %} id="fork_drive_checkbox">
+            <input class="checkbox" type="checkbox" name="fork_drive-1" {% if fork_drive_1 %} checked{% endif %}
+                   id="fork_drive_checkbox">
             <span class="slider round"></span>
           </label>
         </div>
@@ -226,7 +228,7 @@
 <div class="tab-information">
   <h1 class="tab-information__heading">Графики</h1>
   <select class="select-chart" name="chartselect" title="Выбор графика" id="select-chart">
-    <option class="select-chart__option" value="1" id="temp-selected_value" selected>Температура</option>
+    <option class="select-chart__option" value="1" selected>Температура</option>
     <option class="select-chart__option" value="2">Средняя температура</option>
     <option class="select-chart__option" value="3">Влажность воздуха</option>
     <option class="select-chart__option" value="4">Средняя влажность воздуха</option>
@@ -271,14 +273,65 @@
 
 <!-- Database panel -->
 {% block database-panel %}
-  <div class="tab-information">
-    <h1 class="tab-information__heading">Таблица</h1>
-  </div>
-  <div class="panel__block-content" style="background: white;">
-    <div class="block" style="background: white; width: 1250px;">
-      <div id="database_htmx-module" style="background: white; position: relative;"></div>
+<div class="tab-information">
+  <h1 class="tab-information__heading">Таблица</h1>
+</div>
+<div class="panel__block-content">
+  <div class="block block_place_table">
+    <div class="block-top" style="height:450px;">
+      <div id="database_htmx-module"></div>
     </div>
   </div>
+</div>
+<form method="post">
+  {% csrf_token %}
+  <div class="block block_plus">
+    <div class="block-top">
+      <div class="block-top__header">
+        <div class="block__icon block__icon_place_plus"></div>
+        <h2 class="block__name">Добавить запись</h2>
+      </div>
+      <ul class="block__list">
+        <li class="block__line">
+          <h3 class="line__name">Датчик</h3>
+          <div class="settings-input-block">
+            <select class="select-chart" name="deviceselected" title="Выбор датчика" id="select-device">
+              <option class="select-device__option" value="temp-1" selected>Температура 1</option>
+              <option class="select-device__option" value="temp-2">Температура 2</option>
+              <option class="select-device__option" value="temp-3">Температура 3</option>
+              <option class="select-device__option" value="temp-4">Температура 4</option>
+              <option class="select-device__option" value="air_hum-1">Влажность воздуха 1</option>
+              <option class="select-device__option" value="air_hum-2">Влажность воздуха 2</option>
+              <option class="select-device__option" value="air_hum-3">Влажность воздуха 3</option>
+              <option class="select-device__option" value="air_hum-4">Влажность воздуха 4</option>
+              <option class="select-device__option" value="soil_hum-1">Влажность почвы 1</option>
+              <option class="select-device__option" value="soil_hum-2">Влажность почвы 2</option>
+              <option class="select-device__option" value="soil_hum-3">Влажность почвы 3</option>
+              <option class="select-device__option" value="soil_hum-4">Влажность почвы 4</option>
+              <option class="select-device__option" value="soil_hum-5">Влажность почвы 5</option>
+              <option class="select-device__option" value="soil_hum-6">Влажность почвы 6</option>
+            </select>
+          </div>
+        </li>
+        <li class="block__line">
+          <h3 class="line__name">Время</h3>
+          <div class="settings-input-block">
+            <input class="input__plus" name="datetime" type="datetime-local">
+          </div>
+        </li>
+        <li class="block__line">
+          <h3 class="line__name">Значение</h3>
+          <div class="settings-input-block">
+            <input class="input__settings" name="value" type="number">
+          </div>
+        </li>
+        <li class="block__line">
+          <input class="save-button" type="submit" value="Добавить"/>
+        </li>
+      </ul>
+    </div>
+  </div>
+</form>
 {% endblock database-panel %}
 
 <!-- Settings panel -->
@@ -299,13 +352,6 @@
           <h2 class="block__name">Параметры</h2>
         </div>
         <ul class="block__list">
-          <li class="block__line">
-            <h3 class="line__name">Частота запросов</h3>
-            <div class="settings-input-block">
-              <input class="input__settings" type="number" name="frequency" value={{frequency}}>
-              <p class="line__meaning line__meaning_place_settings">сек.</p>
-            </div>
-          </li>
           <li class="block__line">
             <h3 class="line__name">Минимальная температура</h3>
             <div class="settings-input-block">

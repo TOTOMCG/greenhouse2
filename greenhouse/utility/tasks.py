@@ -9,7 +9,7 @@ app = Celery()
 
 @app.task
 def get_all():
-    t = timezone.localtime(timezone.now())
+    t = timezone.localtime(timezone.now()).strftime("%H:%M:%S %d-%m-%Y")
     avg_value = [0, 0]
     for i in range(1, 5):
         g = http_request.get('temp_hum', i, t)

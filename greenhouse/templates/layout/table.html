@@ -14,10 +14,10 @@
       var table = new Tabulator("#table", {
         data: {{data|safe}},
         layout:"fitDataTable",
-        height: 750,
+        height: 432,
         columnHeaderVertAlign:"bottom",
         columns:[
-          {title:"Время",field:"Время",resizable:false,frozen:true},
+          {title:"Время",field:"Время",resizable:false,frozen:true,hozAlign:"right"},
           {title:"Датчик температуры",
             columns:[
               {title:"1",field:"Температура 1", hozAlign:"right", width:75,resizable:false},
