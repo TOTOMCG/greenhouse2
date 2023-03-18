@@ -393,9 +393,51 @@
         document.getElementById("watering_4_checkbox").disabled = false;
         document.getElementById("watering_5_checkbox").disabled = false;
         document.getElementById("watering_6_checkbox").disabled = false;
+      }else{
+        if (document.getElementById("temp__avg").innerHTML > {{min_temp}}) {
+          document.getElementById("fork_drive_checkbox").disabled = false;
+        } else {
+          document.getElementById("fork_drive_checkbox").disabled = true;
+        };
+        if (document.getElementById("air-hum__avg").innerHTML > {{max_air_hum}}) {
+          document.getElementById("total_hum_checkbox").disabled = false;
+        } else {
+          document.getElementById("total_hum_checkbox").disabled = true;
+        };
+        if (document.getElementById("soil-hum__6").innerHTML > {{max_soil_hum}}) {
+          document.getElementById("watering_6_checkbox").disabled = false;
+        } else {
+          document.getElementById("watering_6_checkbox").disabled = true;
+        };
+        if (document.getElementById("soil-hum__5").innerHTML > {{max_soil_hum}}) {
+          document.getElementById("watering_5_checkbox").disabled = false;
+        } else {
+          document.getElementById("watering_5_checkbox").disabled = true;
+        };
+        if (document.getElementById("soil-hum__4").innerHTML > {{max_soil_hum}}) {
+          document.getElementById("watering_4_checkbox").disabled = false;
+        } else {
+          document.getElementById("watering_4_checkbox").disabled = true;
+        };
+        if (document.getElementById("soil-hum__3").innerHTML > {{max_soil_hum}}) {
+          document.getElementById("watering_3_checkbox").disabled = false;
+        } else {
+          document.getElementById("watering_3_checkbox").disabled = true;
+        };
+        if (document.getElementById("soil-hum__2").innerHTML > {{max_soil_hum}}) {
+          document.getElementById("watering_2_checkbox").disabled = false;
+        } else {
+          document.getElementById("watering_2_checkbox").disabled = true;
+        };
+        if (document.getElementById("soil-hum__1").innerHTML > {{max_soil_hum}}) {
+          document.getElementById("watering_1_checkbox").disabled = false;
+        } else {
+          document.getElementById("watering_1_checkbox").disabled = true;
+        };
       }
     });
   });
+
 
 </script>
 <script defer>
@@ -561,6 +603,7 @@
         document.getElementById("setting-panel__button").style.background =
           "#f0f0f0";
       }
+
 
 
 
