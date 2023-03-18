@@ -279,7 +279,50 @@
 <div class="panel__block-content">
   <div class="block block_place_table">
     <div class="block-top" style="height:450px;">
-      <div id="database_htmx-module"></div>
+      <div id='table'></div>
+      <script>
+        var table = new Tabulator("#table", {
+          data: {{data|safe}},
+          layout:"fitDataTable",
+          height: 432,
+          columnHeaderVertAlign:"bottom",
+          columns:[
+            {title:"Время",field:"Время",resizable:false,frozen:true,hozAlign:"right"},
+            {title:"Датчик температуры",
+              columns:[
+                {title:"1",field:"Температура 1", hozAlign:"right", width:75,resizable:false},
+                {title:"2",field:"Температура 2", hozAlign:"right", width:75,resizable:false},
+                {title:"3",field:"Температура 3", hozAlign:"right", width:75,resizable:false},
+                {title:"4",field:"Температура 4", hozAlign:"right", width:75,resizable:false}
+              ],headerHozAlign:"center",
+            },
+            {title:"Датчик влажности воздуха",
+              columns:[
+                {title:"1",field:"Влажность воздуха 1", hozAlign:"right", width:75,resizable:false},
+                {title:"2",field:"Влажность воздуха 2", hozAlign:"right", width:75,resizable:false},
+                {title:"3",field:"Влажность воздуха 3", hozAlign:"right", width:75,resizable:false},
+                {title:"4",field:"Влажность воздуха 4", hozAlign:"right", width:75,resizable:false}
+              ], headerHozAlign:"center",
+            },
+            {title:"Датчик влажности почвы",
+              columns:[
+                {title:"1",field:"Влажность почвы 1", hozAlign:"right", width:75,resizable:false},
+                {title:"2",field:"Влажность почвы 2", hozAlign:"right", width:75,resizable:false},
+                {title:"3",field:"Влажность почвы 3", hozAlign:"right", width:75,resizable:false},
+                {title:"4",field:"Влажность почвы 4", hozAlign:"right", width:75,resizable:false},
+                {title:"5",field:"Влажность почвы 5", hozAlign:"right", width:75,resizable:false},
+                {title:"6",field:"Влажность почвы 6", hozAlign:"right", width:75,resizable:false},
+              ],headerHozAlign:"center",
+            },
+          ],
+        });
+    </script>
+    <style>
+      .tabulator {
+        font-size: 16px;
+        font-family: "Inter", sans-serif;
+      }
+    </style>
     </div>
   </div>
 </div>
