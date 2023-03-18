@@ -36,5 +36,6 @@ def returnmain(request):
         'watering_6': True if dbhelper.get_last('watering', 6) == 1 else False,
         'total_hum_1': True if dbhelper.get_last('total_hum', 1) == 1 else False,
         'fork_drive_1': True if dbhelper.get_last('fork_drive', 1) == 1 else False,
+        'data': dbhelper.get_table(),
     }
     return render(request, 'main/index.html', context)

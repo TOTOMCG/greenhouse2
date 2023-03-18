@@ -124,7 +124,7 @@ def get_table():
             'Влажность почвы 5': safe_list_get(dtms[13], i)[0],
             'Влажность почвы 6': safe_list_get(dtms[14], i)[0]
         })
-    return {'data': r}
+    return r
 
 
 def get_setting(name):
